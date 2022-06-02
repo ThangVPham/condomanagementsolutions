@@ -1,0 +1,86 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+<%- include('../partials/search-bar.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="card w-100 mb-3 bg-secondary bg-gradient">
+        <div class="card-body">
+            <div class="row">
+                <table>
+                    <tr>
+                        <th class="col-1 ps-3">Unit No.</th>
+                        <th class="col-2 col-xl-1 ps-3 ps-xl-0 d-none d-md-table-cell">Prim. Occupant</th>
+                        <th class="col-1 ps-3 ps-lg-0 text-xl-center d-none d-lg-table-cell">Size</th>
+                        <th class="col-1 ps-3 ps-lg-0 text-xl-center d-none d-md-table-cell">Bedroom</th>
+                        <th class="col-1 ps-3 ps-lg-0">Availability</th>                       
+                        <th class="col-1 ps-3 d-none d-xl-table-cell">Move In</th>
+                        <th class="col-1 ps-3 d-none d-xl-table-cell">Move Out</th>
+                        <th class="col-1 ps-3 ps-xl-0 text-xl-center">Action</th>
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%for(let i =0; i<apartment.length; i++){%>
+    <div class="card w-100 mb-2 bg-gradient shadow" style="background-color: #CBCEDB">
+        <div class="card-body" >
+            <div class="row">
+                <table>
+                    <tr>
+                        <td rowspan ="2" class="col-1 ps-3" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].unitNumber%></td>
+                        <td rowspan ="2" class="col-2 col-lg-1 ps-3 ps-lg-0 text-lg-start d-none d-md-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].primaryOccupant%></td>                       
+                        <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center d-none d-lg-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].size%> sqft</td>
+                        <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center d-none d-md-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].numOfBdr%></td>
+                        <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center text-xl-start" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].availability%></td>                                           
+                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateIn.toLocaleDateString()%></td>   
+                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateOut == null? "-" : apartment[i].dateOut.toLocaleDateString()%></td>   
+                        <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center">                            
+                            <a href="/apartment/edit/<%=apartment[i]._id%>"><i class="fas fa-edit me-3"></i></a>                                                          
+                            <a href="/apartment/delete/<%=apartment[i]._id%>"><i class="fas fa-trash"></i></a>                          
+                        </td>
+                    </tr>                                   
+                </table>
+            </div>
+        </div>
+        <div class="collapse m-1 m-sm-0" id="apartmentdetail<%=[i]%>">
+            <div class="card card-body">
+              <h6 class="d-xl-none">
+                  <b>Apartment Details</b>
+              </h6>
+              <div class="d-lg-none">
+                <span><b>Primary Occupant:</b></span>
+                <span><%=apartment[i].primaryOccupant%></span>
+              </div>
+              <div class="d-lg-none">
+                <span><b>Size:</b></span>
+                <span><%=apartment[i].size%></span>
+              </div>
+              <div class="d-lg-none">
+                <span><b>Bedroom:</b></span>
+                <span><%=apartment[i].numOfBdr%> Bedroom(s)</span>
+              </div>
+              <div class="d-xl-none">
+                <span><b>Move In Date: </b></span>
+                <span><%=apartment[i].dateIn.toLocaleDateString()%></span>
+              </div>
+              <div class="d-xl-none">
+                <span><b>Move Out Date: </b></span>
+                <span><%=apartment[i].dateOut== null? "N/A" : apartment[i].dateOut.toLocaleDateString()%></span>
+              </div><hr>
+              <div>
+                <h6><b>Additonal Information: </b></h6>
+                <p><%=apartment[i].addtionalInfo ==null?'None':apartment[i].addtionalInfo %></p>
+              </div>
+
+
+            </div>
+          </div>
+    </div>
+    <%}%>
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

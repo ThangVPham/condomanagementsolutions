@@ -1,0 +1,177 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+
+<!------------------------------------------------->
+
+<div class="container mb-3 mt-md-3">
+  <div class="mb-4 mt-3  bg-light text-white animate__animated animate__fadeIn">
+    <div class="mb-4 px-xxl-5 col-md-10 py-2 rounded-3 shadow mx-auto w-100 amenity-bg">
+        <h3 class=" mt-5 fw-bold text-dark d-md-flex text center justify-content-center amenity-jumbo text-white">What would you like to book today?</h3>
+    </div>
+  </div>
+    <div class="row row-cols-1 row-cols-md-2 g-md-1 row-cols-xl-3 ">
+        <div class="col animate__animated animate__fadeInUp">
+          <div class="card h-100 zoom amenityCard" id="1" data-bs-toggle="modal" data-bs-target="#cardModal" data-bs-whatever="Fitness">
+            <img src="./Assets/fitness.jpg" class="card-img-top" alt="Gym">
+            <div class="card-body">
+              <h5 class="card-title">Fitness Center</h5>
+              <p class="card-text ">More than a gym, it’s a luxury athletic resort.Here you’ll find an expansive fitness floor, group fitness studios, dedicated kids spaces, upscale locker rooms, a spa — 10,000 stunning square feet, all dedicated to the pursuit of healthy living.</p>
+              
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+          </div>
+        </div>
+        <div class="col  animate__animated animate__fadeInUp">
+          <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="2">
+            <img src="./Assets/pool.jpg" class="card-img-top" alt="Swimming Pool">
+            <div class="card-body">
+              <h5 class="card-title">Swimming Pool</h5>
+              <p class="card-text">The expansive, heated, 50-foot long family-friendly pool is infused with light and has a designated lap lane. If you’d prefer a more structured way to get your swim sweat on, we offer Aquafit classes. Located on the 25th-floor rooftop, overlooking Lake Ontario, our swimming pool offers a breathtaking view of sunsets</p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+          </div>
+        </div>
+        <div class="col animate__animated animate__fadeInUp">
+          <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="3">
+            <img src="./Assets/sauna.jpg" class="card-img-top" alt="Sauna">
+            <div class="card-body">
+              <h5 class="card-title">Sauna</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+          </div>
+        </div>
+        <div class="col animate__animated animate__fadeInUp">
+          <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="4">
+            <img src="./Assets/hottub.jpg" class="card-img-top" alt="Hot Tub">
+            <div class="card-body">
+              <h5 class="card-title">Hot Tub</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+          </div>
+        </div>
+        <div class="col animate__animated animate__fadeInUp">
+            <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="5">
+              <img src="./Assets/partyroom.jpg" class="card-img-top" alt="Party Room">
+              <div class="card-body">
+                <h5 class="card-title">Party Room</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+            </div>
+          </div>
+          <div class="col animate__animated animate__fadeInUp">
+            <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="6">
+              <img src="./Assets/rooftop.jpg" class="card-img-top" alt="Roof Top Space">
+              <div class="card-body">
+                <h5 class="card-title">Rooftop Space</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+            </div>
+          </div>
+          <div class="col animate__animated animate__fadeInUp">
+            <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="7">
+              <img src="./Assets/gameroom.jpg" class="card-img-top" alt="Game Room">
+              <div class="card-body">
+                <h5 class="card-title">Game Room</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+            </div>
+          </div>
+          <div class="col animate__animated animate__fadeInUp">
+            <div class="card h-100 zoom amenityCard" data-bs-toggle="modal" data-bs-target="#cardModal" id="8">
+              <img src="./Assets/guestroom.jpg" class="card-img-top" alt="Guest Room">
+              <div class="card-body">
+                <h5 class="card-title">Guest Suite</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <small ><b>$105.00/night</b></small>
+            </div>
+            </div>
+          </div>
+          <div class="col animate__animated animate__fadeInUp">
+            <div class="card h-100 zoom amenityCard">
+              <img src="./Assets/petwash.jpg" class="card-img-top" alt="Pet Washing Station">
+              <div class="card-body">
+                <h5 class="card-title">Pet Washing Station</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <small ><b>No Fee</b></small>
+            </div>
+            </div>          
+        </div>
+    </div>
+    <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cardModalLabel">Reservation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST">
+              <div class="mb-3">
+                <img src="" alt="" id="modalImage" style="max-width: 100%;">
+                <label for="amenity" class="col-form-label">Amenity</label>
+                <select id="amenity" class="form-control" name='amenityType' required>                   
+                  <option  id = 'selected' selected></option>
+                  <option value='Fitness-Center'>Fitness Center</option>
+                  <option value='Swimming Pool'>Swimming Pool</option>
+                  <option value='Sauna'>Sauna</option>                             
+                  <option value='Hot Tub'>Hot Tub</option>     
+                  <option value='Party Room'>Party Room</option>             
+                  <option value='Rooftop Space'>Rooftop Space</option>
+                  <option value='Game Room'>Game Room</option>
+                  <option value='Guest Suite'>Guest Suite</option>
+              </select>
+              </div>
+              <div class="mb-3">
+                <label for="date">Date</label>
+                <input type="date" class='form-control' style="text-align: center;" name='date' id='date' required>
+              </div>
+              <div class="mb-3">
+                <label for="timeslot" class="col-form-label">Select Time</label>
+                <select id="timeslot" class="form-control" name='timeslot' required></select>
+              </div>
+              <div class="d-flex justify-content-between">
+                <h6>Total:</h6>
+                <p id="price" name="fee">$105.00</p>
+              </div>
+              
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Book Now</button>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+<!------------------------------------------------->
+<script src='/Script/amenity_script.js'></script>
+<%- include('../partials/footer.ejs')%>
+</div>
+
+
+
+

@@ -1,0 +1,296 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="form d-none d-md-block">
+        <form method="POST">
+            <h3><i class="fas fa-info"></i> Ticket Information</h3><hr>
+            <div class="d-flex">
+                <div class="form-column w-50">
+                    <div class="form-group col-md-6 w-100">
+                      <label for="employee">Assign To</label>
+                      <div class="d-flex mb-2">
+                        <select type="text" class="form-control" id="employee" name="employee" required>
+                          <%if(page=='edit-order-assign'){%>
+                            <option value="<%=ticket.employee%>" selected><%=ticket.employee%></option>
+                          <%}%>   
+                            <option></option>
+                            <option value="Jeffrey Scott" >Jeffrey Scott</option>
+                            <option value="Tom Chen">Tom Chen</option>
+                            <option value="Kenny Anderson">Kenny Anderson</option>
+                            <option value="David Yoshikawa">David Yoshikawa</option>
+                            <option value="Francis Silva">Francis Silva</option>
+                        </select>
+                      </div>
+                      <label for="requester ">Requested By</label>
+                      <div class="d-flex mb-2">
+                        <%if(page=='create-order-assign'){%>
+                          <input type="text" class="form-control me-1" id="requester" name="requester" value="<%=request.requester%>" required>
+                        <%} else if(page=='edit-order-assign'){%>
+                          <input type="text" class="form-control me-1" id="requester" name="requester" value="<%=ticket.requester%>" required>
+                        <%}else if(page=='create-new-workorder'){%>
+                          <input type="text" class="form-control me-1" id="requester" name="requester" required>
+                        <%}%> 
+
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 mb-2 w-100">
+                      <div class="d-flex">
+                          <div class="col-6 pe-2">
+                              <label for="unit">Location</label>
+                              <%if(page=='create-order-assign'){%>
+                                <input type="text" class="form-control me-2" id="unit" name="unit" value="<%=request.unit%>" required>
+                              <%}else if(page=='edit-order-assign'){%>
+                                <input type="text" class="form-control me-2" id="unit" name="unit" value="<%=ticket.unit%>" required>
+                              <%}else if(page=='create-new-workorder'){%>
+                                <input type="text" class="form-control me-2" id="unit" name="unit" required>
+                              <%}%> 
+                          </div>
+                          <div class="col-6  pe-1 ">
+                              <label for="requestType">Type of Issues</label>
+                              <select type="text" class="form-control" id="requestType" name="requestType" required>
+                                <%if(page=='create-order-assign'){%>
+                                  <option value="<%=request.requestType%>" selected><%=request.requestType%></option>
+                                <%}else if(page=='edit-order-assign'){%>
+                                  <option value="<%=ticket.requestType%>" selected><%=ticket.requestType%></option>
+                                <%}%>
+                                  <option value="Electrical">Electrical</option>
+                                  <option value="Plumbing">Plumbing</option>
+                                  <option value="Repair">Repair</option>
+                                  <option value="Cleaning">Cleaning</option>
+                                  <option value="Others">Others</option>
+                              </select>
+                          </div>                
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6 w-100">
+                      <div class="d-flex mb-2">
+                        <div class="col-6 pe-2 ">
+                          <label for="priority">Priority</label>
+                            <select type="text" class="form-control" id="priority" name="priority" required>
+                              <%if(page=='edit-order-assign'){%>
+                                <option value="<%=ticket.priority%>"><%=ticket.priority%></option>
+                              <%}else if(page=='create-order-assign'){%>
+                                <option value="<%=request.priority%>"><%=request.priority%></option>
+                              <%}%>
+                              <option value="Low" >Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>                         
+                        </div>
+                      <div class="col-6  pe-1 ">
+                          <label for="status">Status</label>
+                            <select type="text" class="form-control" id="status" name="status" required>
+                              <%if(page=='create-order-assign'){%>
+                                <option value="<%=request.status%>" selected><%=request.status%></option>
+                              <%}else if(page=='edit-order-assign'){%>
+                                <option value="<%=ticket.status%>" selected><%=ticket.status%></option>
+                              <%}%>
+                                <option value="In-Progress">In-Progress</option>
+                                <option value="Delay">Delay</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                      </div>                
+                    </div>
+
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <div class="d-flex ">
+                          <div class="col-6 pe-2">
+                            <label for="dateCreated">Date Created</label>
+                            <%if(page=='edit-order-assign'){%>
+                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toLocaleDateString()%>">
+                            <%} else{%>
+                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toLocaleDateString()%>">
+                            <%}%> 
+                          </div>
+                          <div class="col-6  pe-1 ">
+                              <label for="dateCompleted">Date Completed</label>
+                              <%if(page=='edit-order-assign'){%>
+                                <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCreated%>" >
+                              <%} else{%>
+                                <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted">
+                              <%}%> 
+                          </div>                
+                      </div>
+                    </div>
+                   
+                  </div>
+                                      
+                </div>
+                <div class="ms-lg-2 form-column d-flex ">
+                    <img class="w-100" src="/worker.gif" alt="" style="width:300px;">
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="details">Details</label>
+                <%if(page=='create-order-assign'){%>
+                  <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"><%=request.details==null?'':request.details%></textarea>
+                <%}else if(page=='edit-order-assign'){%>
+                  <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"><%=ticket.details==null?'':ticket.details%></textarea>
+                <%}else if(page=='create-new-workorder'){%>
+                  <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"></textarea>
+                <%}%>
+              </div>
+            <%if(page=='create-new-workorder' || page=='create-order-assign'){%>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <%}else if(page=='edit-order-assign'){%>
+              <button type="submit" class="btn btn-primary">Edit</button>
+            <%}%>
+            <a href="/workorder"><button type="button" class="btn btn-secondary">Return</button></a>
+            
+          </form>
+    </div>
+
+
+    <div class="d-block d-md-none">
+      <form method="POST">
+          <h3><i class="fas fa-info"></i> Ticket Information</h3><hr>
+          <div class="d-block">
+              <div class="form-column w-100 d-flex justify-content-center">
+                <img src="/worker.gif" alt="" style="width:300px;">
+              </div>
+              <div class="form-column w-100">
+                  <div class="form-group col-md-6 w-100">
+                    <label for="employee">Assign To</label>
+                    <div class="d-flex mb-2">
+                      <select type="text" class="form-control" id="employee" name="employee" required>
+                        <%if(page=='edit-order-assign'){%>
+                          <option value="<%=ticket.employee%>" selected><%=ticket.employee%></option>
+                        <%}%>   
+                          <option></option>
+                          <option value="Jeffrey Scott" >Jeffrey Scott</option>
+                          <option value="Tom Chen">Tom Chen</option>
+                          <option value="Kenny Anderson">Kenny Anderson</option>
+                          <option value="David Yoshikawa">David Yoshikawa</option>
+                          <option value="Francis Silva">Francis Silva</option>
+                      </select>
+                    </div>
+                    <label for="requester ">Requested By</label>
+                    <div class="d-flex mb-2">
+                      <%if(page=='create-order-assign'){%>
+                        <input type="text" class="form-control me-1" id="requester" name="requester" value="<%=request.requester%>" required>
+                      <%} else if(page=='edit-order-assign'){%>
+                        <input type="text" class="form-control me-1" id="requester" name="requester" value="<%=ticket.requester%>" required>
+                      <%}else if(page=='create-new-workorder'){%>
+                        <input type="text" class="form-control me-1" id="requester" name="requester" required>
+                      <%}%> 
+
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 mb-2 w-100">
+                    <div class="d-flex">
+                        <div class="col-6 pe-2">
+                            <label for="unit">Location</label>
+                            <%if(page=='create-order-assign'){%>
+                              <input type="text" class="form-control me-2" id="unit" name="unit" value="<%=request.unit%>" required>
+                            <%}else if(page=='edit-order-assign'){%>
+                              <input type="text" class="form-control me-2" id="unit" name="unit" value="<%=ticket.unit%>" required>
+                            <%}else if(page=='create-new-workorder'){%>
+                              <input type="text" class="form-control me-2" id="unit" name="unit" required>
+                            <%}%> 
+                        </div>
+                        <div class="col-6  pe-1 ">
+                            <label for="requestType">Type of Issues</label>
+                            <select type="text" class="form-control" id="requestType" name="requestType" required>
+                              <%if(page=='create-order-assign'){%>
+                                <option value="<%=request.requestType%>" selected><%=request.requestType%></option>
+                              <%}else if(page=='edit-order-assign'){%>
+                                <option value="<%=ticket.requestType%>" selected><%=ticket.requestType%></option>
+                              <%}%>
+                                <option value="Electrical">Electrical</option>
+                                <option value="Plumbing">Plumbing</option>
+                                <option value="Repair">Repair</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>                
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-6 w-100">
+                    <div class="d-flex mb-2">
+                      <div class="col-6 pe-2 ">
+                        <label for="priority">Priority</label>
+                          <select type="text" class="form-control" id="priority" name="priority" required>
+                            <%if(page=='edit-order-assign'){%>
+                              <option value="<%=ticket.priority%>"><%=ticket.priority%></option>
+                            <%}else if(page=='create-order-assign'){%>
+                              <option value="<%=request.priority%>"><%=request.priority%></option>
+                            <%}%>
+                            <option value="Low" >Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                          </select>                         
+                      </div>
+                    <div class="col-6  pe-1 ">
+                        <label for="status">Status</label>
+                          <select type="text" class="form-control" id="status" name="status" required>
+                            <%if(page=='create-order-assign'){%>
+                              <option value="<%=request.status%>" selected><%=request.status%></option>
+                            <%}else if(page=='edit-order-assign'){%>
+                              <option value="<%=ticket.status%>" selected><%=ticket.status%></option>
+                            <%}%>
+                              <option value="In-Progress">In-Progress</option>
+                              <option value="Delay">Delay</option>
+                              <option value="Completed">Completed</option>
+                          </select>
+                    </div>                
+                  </div>
+
+                  <div class="form-group col-md-6 mb-3 w-100">
+                    <div class="d-flex ">
+                        <div class="col-6 pe-2">
+                          <label for="dateCreated">Date Created</label>
+                          <%if(page=='edit-order-assign'){%>
+                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toLocaleDateString()%>">
+                          <%} else{%>
+                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toLocaleDateString()%>">
+                          <%}%> 
+                        </div>
+                        <div class="col-6  pe-1 ">
+                            <label for="dateCompleted">Date Completed</label>
+                            <%if(page=='edit-order-assign'){%>
+                              <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCreated%>" >
+                            <%} else{%>
+                              <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted">
+                            <%}%> 
+                        </div>                
+                    </div>
+                  </div>
+                 
+                </div>
+                                    
+              </div>
+
+          </div>
+
+          <div class="form-group mb-3">
+              <label for="details">Details</label>
+              <%if(page=='create-order-assign'){%>
+                <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"><%=request.details==null?'':request.details%></textarea>
+              <%}else if(page=='edit-order-assign'){%>
+                <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"><%=ticket.details==null?'':ticket.details%></textarea>
+              <%}else if(page=='create-new-workorder'){%>
+                <textarea class="form-control" id="details" rows="3" placeholder="Additional Information" name="details"></textarea>
+              <%}%>
+            </div>
+            <div class="text-center">
+              <%if(page=='create-new-workorder' || page=='create-order-assign'){%>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <%}else if(page=='edit-order-assign'){%>
+                  <button type="submit" class="btn btn-primary">Edit</button>
+                <%}%>
+                <a href="/workorder"><button type="button" class="btn btn-secondary">Return</button></a>
+            </div>
+
+          
+        </form>
+  </div>
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

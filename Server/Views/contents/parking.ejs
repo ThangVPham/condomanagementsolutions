@@ -1,0 +1,118 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="content-container">
+        <div class="form d-none d-md-block">
+            <form method="POST">
+                <h3><i class="fas fa-parking"></i> Permit Information</h3><hr>
+                <div class="d-flex mb-3">
+                    <div class="form-column w-50">
+                        <div class="form-group col-md-6 w-100">
+                          <label for="fullname">Visitor's Name</label>
+                          <div class="d-flex mb-2">    
+                            <input type="text" class="form-control me-2" id="fullname" name="fullname" placeholder="Full Name" required>       
+                          </div>
+                          <label for="vehiclemake ">Vehicle Make</label>
+                          <div class="d-flex mb-2">
+                            <input type="text" class="form-control me-2" id="vehiclemake" name="vehiclemake" placeholder="ex. Toyota, Honda, Chevrolet" required> 
+                          </div>
+                          <label for="phone ">Phone Number</label>
+                          <div class="d-flex mb-2">
+                            <input type="tel" class="form-control me-2" id="phone" name="phone" placeholder="ex. 111-111-1111" required> 
+                          </div>
+                          <label for="email ">Email</label>
+                          <div class="d-flex mb-2">
+                            <input type="email" class="form-control me-2" id="email" name="email" placeholder="example@email.ca" required> 
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6 mb-2 w-100">
+                          <div class="d-flex">
+                              <div class="col-6 pe-2">
+                                <label for="licenseplate">Plate Number</label>                                 
+                                <input type="text" class="form-control me-2" id="licenseplate" name="licenseplate" required>                              
+                              </div>
+                              <div class="col-6  pe-1 ">
+                                  <label for="unitVisit">Visiting Unit</label>
+                                  <input type="text" class="form-control me-2" id="unitVisit" name="unitVisit" required>    
+                              </div>                
+                          </div>
+                        </div>     
+                        <div class="form-group col-md-6 mb-2 w-100">
+                            <label for="dateFrom">Date</label>
+                            <input type="date" class="form-control me-2" id="dateFrom" name="dateFrom"required>
+                        </div>                                    
+                    </div>
+                    <div class="form-column w-50 h-50 d-flex justify-content-center">
+                        <img src="/parking.gif" alt="" style="width:300px;">
+                    </div>                   
+                </div>
+                
+    
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/"><button type="button" class="btn btn-secondary">Return</button></a>
+                
+              </form>
+        </div>
+
+
+        <div class="form d-block d-md-none">
+          <form method="POST">
+              <h3><i class="fas fa-parking"></i> Permit Information</h3><hr>
+              <div class="d-block mb-3">
+                <div class="form-column w-100 d-flex justify-content-center">
+                  <img src="/parking.gif" alt="" style="width:300px;">
+                </div> 
+                  <div class="form-column w-100">
+                      <div class="form-group col-md-6 w-100">
+                        <label for="fullname">Visitor's Name</label>
+                        <div class="d-flex mb-2">    
+                          <input type="text" class="form-control me-2" id="fullname" name="fullname" placeholder="Full Name" required>       
+                        </div>
+                        <label for="vehiclemake ">Vehicle Make</label>
+                        <div class="d-flex mb-2">
+                          <input type="text" class="form-control me-2" id="vehiclemake" name="vehiclemake" placeholder="ex. Toyota, Honda, Chevrolet" required> 
+                        </div>
+                        <label for="phone ">Phone Number</label>
+                        <div class="d-flex mb-2">
+                          <input type="tel" class="form-control me-2" id="phone" name="phone" placeholder="ex. 111-111-1111" required> 
+                        </div>
+                        <label for="email ">Email</label>
+                        <div class="d-flex mb-2">
+                          <input type="email" class="form-control me-2" id="email" name="email" placeholder="example@email.ca" required> 
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 mb-2 w-100">
+                        <div class="d-flex">
+                            <div class="col-6 pe-2">
+                              <label for="licenseplate">Plate Number</label>                                 
+                              <input type="text" class="form-control me-2" id="licenseplate" name="licenseplate" required>                              
+                            </div>
+                            <div class="col-6  pe-1 ">
+                                <label for="unitVisit">Visiting Unit</label>
+                                <input type="text" class="form-control me-2" id="unitVisit" name="unitVisit" required>    
+                            </div>                
+                        </div>
+                      </div>     
+                      <div class="form-group col-md-6 mb-2 w-100">
+                          <label for="dateFrom">Date</label>
+                          <input type="date" class="form-control me-2" id="dateFrom" name="dateFrom"required>
+                      </div>                                    
+                  </div>
+                  
+              </div>
+              
+  
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="/"><button type="button" class="btn btn-secondary">Return</button></a>
+              
+            </form>
+      </div>
+    </div>
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

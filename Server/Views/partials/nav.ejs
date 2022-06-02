@@ -1,0 +1,103 @@
+<div class="side-bar">
+  <div class="p-2" style="background-color:#2f313a">
+    <span class="fs-4">Dashboard</span>
+  </div>
+    <div class="d-flex flex-column flex-shrink-0 px-3 text-white mb-2" style="width: 280px; background-color:#171921">     
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="/" class= "<%=title=='Home' ? "nav-link active text-white":"nav-link text-white"%>" aria-current="page" id="home">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="/amenity" class="<%= title =='Amenity'? "nav-link active text-white":"nav-link text-white" %>" id="amenities">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              <i class="fas fa-swimming-pool"></i> Amenities
+            </a>
+          </li>
+          <li>
+            <a href="/moving" class="<%= title =='Moving'? "nav-link active text-white":"nav-link text-white" %>" id="moving">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              <i class="fas fa-dolly"></i> Moving
+            </a>
+          </li>
+          <li>
+            <a href="/myrequest" class="<%= title =='My Requests'? "nav-link active text-white":"nav-link text-white" %>" id="myrequest">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <i class="fas fa-receipt"></i>  Request
+            </a>
+          </li>
+          <%if(usertype==='Admin'){%>
+          <li>
+            <a href="/workorder" class="<%= title =='Work Orders'? "nav-link active text-white":"nav-link text-white" %>" id="moving" id="workorder">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              <i class="fas fa-clipboard"></i> Work Orders
+            </a>
+          </li>
+          <li>
+            <a href="/apartment" class="<%= title =='Apartments'? "nav-link active text-white":"nav-link text-white" %>" id="unitinfo">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              <i class="fas fa-building"></i> Apartment Units
+            </a>
+          </li>
+          <%}%>
+        </ul>              
+    </div>
+    <div class="p-2" style="background-color:#2f313a">
+      <span class="fs-4">Information</span>
+      
+    </div>
+    <div class="d-flex flex-column flex-shrink-0 px-3 text-white mb-2" style="width: 280px; background-color:#171921">
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="/announcement" class="<%= title =='Announcements'? "nav-link active text-white":"nav-link text-white" %>" id="moving" aria-current="page" id="announcements">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#"></use></svg>
+              <i class="fas fa-bell"></i> Announcements
+            </a>
+          </li>
+          <li>
+            <a href="/myreservation" class="nav-link text-white" id="reservations">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              <i class="fas fa-address-book"></i> Reservations
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white" id="contactus">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <i class="fas fa-sitemap"></i> Staff Directory
+            </a>
+          </li>
+        </ul>
+    </div>
+    <div class="p-2" style="background-color:#2f313a">
+      <span class="fs-4">Visitors</span>
+      
+    </div>
+    <div class="d-flex flex-column flex-shrink-0 px-3 text-white" style="width: 280px; background-color:#171921">
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="/parking" class="<%= title =='Parking Permit'? "nav-link active text-white":"nav-link text-white" %>" aria-current="page" id="parkingvalidation">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#"></use></svg>
+              <i class="fas fa-parking"></i> Parking Validation
+            </a>
+          </li>
+          <li>
+            <a href="/contact-us" class="<%= title =='Contact Us'? "nav-link active text-white":"nav-link text-white" %>" id="contactdirectory">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <i class="far fa-list-alt"></i> Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="/logout" class="nav-link text-white" id="logout">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <i class="fas fa-sign-out-alt"></i> Log Out
+            </a>
+          </li>
+         
+        </ul>
+    </div>
+</div>

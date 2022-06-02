@@ -1,0 +1,357 @@
+html{
+    overflow-x:hidden;
+}
+body{
+    width:100vw;
+    overflow-x:hidden;
+    overflow-y: auto;
+}
+
+.top-nav{
+    background-color: #171921;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+.top-logo{
+    width:100%;
+}
+.top-logo img{
+    max-width:290px;
+    padding:10px;
+}
+
+.profile{
+    max-width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 20px;
+    color:white;
+    margin-right:5%;
+}
+.profile img{
+    height:50px;
+    margin-right: 15px;
+    background:rgb(63, 63, 63);
+    border-radius: 50%;
+    padding:5px;
+    
+}
+
+.search-bar{
+    width:100%;
+    display:flex;
+    height:97.7px;
+    align-items: center;
+    justify-content: end;
+}
+
+.main-container{
+    display:grid;
+    grid-template-columns: 1fr 7fr;
+}
+
+.side-bar{
+    background-color:#171921;
+    color: white;
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+.banner-top{
+    width:100%;
+    height:120px;
+    background-image: linear-gradient( rgba(7, 12, 32, 0.9), rgba(1, 3, 22, 0.1)),url("../Assets/bg-top.jpg");
+    background-size: cover;
+    background-position:  55%;
+}
+
+.jumbo-bg{
+    background-size:cover;
+    background-image: linear-gradient( rgba(97, 48, 8, 0.5), rgba(5, 5, 56, 0.1)),url("../Assets/condo.jpg");
+    background-position:70% 30%;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    text-shadow: 2px 2px #020918;
+}
+
+.jumbo-bg:hover{
+    -webkit-transform: scale(1.01,1.01);
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.jumbo-text{
+    font-size:20px;
+    text-shadow: 2px 2px black;
+}
+
+.announcement {
+    max-height:350px;
+    overflow-y:scroll; 
+}
+.reservation{
+    max-height:350px;
+}
+.reservation a,.announcement  a{
+    text-decoration: none;   
+    
+}
+
+.elevator-bg:hover{
+    -webkit-transform: scale(1.01,1.01);
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+
+.copy-right{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    background-color: #060813;
+    text-align: center;
+
+}
+.site-map{
+    background-image: linear-gradient( rgba(6, 10, 27, 0.9), rgba(2, 4, 24, 0.4)),url("../Assets/bg-city.jpg");
+    padding: 10px 10px;
+
+}
+.site-map ul a{
+    text-decoration: none;
+    color:white;
+    list-style: none;
+    text-align: start;
+}
+.site-map ul li{
+    text-align: start;
+    text-decoration: none;
+    list-style: none;
+}
+
+.amenity-bg{
+    height:250px;
+    background-image:  linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../Assets/pool-banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.amenityCard{
+    cursor: pointer;
+}
+.amenityCard img{
+    height: 250px;
+}
+
+.amenity-jumbo{
+    text-shadow: 2px 2px #000000;
+}
+
+.zoom{
+    overflow: hidden;
+}
+.zoom img{
+    transform: scale(1);
+    transition: transform 0.3s ease-in;
+}
+.zoom:hover img{
+    transform: scale(1.05);
+    opacity:0.9;
+}
+
+
+
+.search-filter{
+    display: flex;
+    margin:3% auto;
+    align-items: center;
+    max-width: 90%;
+    border-radius: 5px;
+    height: 200px;
+    background-image: url("../Assets/request-bg.jpg");
+    background-size: cover;
+    background-position:center;
+    text-shadow: 1px 1px black;
+    font-weight:700;
+}
+.content{
+    max-width: 100%;
+}
+.content-container{
+    margin:3% auto;
+    max-width: 90%;
+    min-height:39vh;
+}
+
+
+.form{
+    margin: 0 auto;
+    border: 2px outset rgb(223, 210, 210);
+    border-radius: 2%;
+    min-height:50vh;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.moving{
+    background-size:cover;
+    background-image: linear-gradient( rgba(97, 48, 8, 0.5), rgba(5, 5, 56, 0.1)),url("../Assets/Moving3.jpg");
+    background-position:50% 50%;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    text-shadow: 2px 2px #020918;
+    height: 250px;
+}
+.elevator-img{
+    width:100%;
+}
+.msg{
+    margin: 0 auto;
+    max-width: 500px;
+    
+
+}
+.msg img{
+    max-width: 50px;
+}
+.collapse-nav-content{
+    width:100vw;
+    background-color: rgb(29, 33, 36);
+}
+.collapse-nav-hr{
+    border: 1px solid rgb(136, 132, 132);
+    color:white; 
+    margin:5px auto 1px auto; 
+    width:80% 
+}
+
+.login-body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:84vh;
+    background-image:
+        linear-gradient(to bottom, rgba(12, 12, 12, 0.6), rgba(11, 12, 12, 0.6)),
+        url(../Assets/bg-city2.jpg);
+        background-size: cover;
+}
+
+.login-form-card{
+    color:white;
+    width:600px;
+    margin:0 auto;
+    padding:40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2%;
+    text-align: center;
+}
+.register-form-card{
+    margin:0 auto;
+    color:white;
+    max-width:600px;
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2%;
+    text-align: center;
+}
+
+
+@media (max-width:1840px){
+    .reservation{
+        max-height: 300px ;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 1450px){
+    .reservation{
+        padding:0;
+    }
+    .text-light{
+        font-size: 30px;
+    }
+
+}
+@media(max-width:1250px){
+    .addWOButton-font{
+        font-size:12px;
+    }
+}
+@media(max-width:1200px){
+    .jumbo-text{
+        font-size:15px;
+    }
+    .header-size{
+        font-size:25px;
+    }
+}
+
+@media(max-width:991px){
+
+    .header-size{
+        font-size:25px;
+        margin:10px 10px;
+    }
+    .reservation{
+        margin: 10px;
+    }
+    .side-bar{
+        display:none;
+    }
+    .main-container{
+        display:block
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .top-logo{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media(max-width:625px){
+    html{
+        width:100%;
+        overflow-x: hidden;
+    }
+    .amenity-bg p{
+        font-size: 14px;
+    }
+    .mobile-font{
+        font-size: 16px;
+    }
+    .search-filter{
+        height:120px;
+    }
+}
+
+@media(max-width:567px){
+    .banner-top{
+        height:60px;
+    }
+}
+@media(min-width:1300px){
+    .form{
+        max-width:60%;
+    }
+}
+
+/* @media(max-width:576){
+    
+.copy-right{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    background-color: #060813;
+    text-align: center;
+}
+.site-map{
+    background-image: linear-gradient( rgba(6, 10, 27, 0.9), rgba(2, 4, 24, 0.4)),url("../Assets/bg-city.jpg");
+    padding: 10px 0;
+}
+} */

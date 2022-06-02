@@ -1,0 +1,122 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+<%- include('../partials/search-bar.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="card w-100 mb-3 bg-secondary bg-gradient shadow">
+        <div class="card-body">
+            <div class="row ">
+                <table>
+                    <tr>
+                        <th class="col-1 text-md-center">Type</th>
+                        <th class="col-md-4 col-1 ">Details</th>
+                        <th class="col-1 text-sm-center">Unit</th>
+                        <th class="col-1 text-md-center">Status</th>
+                        <%if(usertype==='Admin'){%>
+                        <th class="col-md-3 col-1 text-md-center">Action</th>
+                        <%}%>
+                        <th class="col-md-2 col-1 text-md-center">Date</th>
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+    </div>
+    <%for(let i =0; i<request.length; i++){%>
+    <div class="card w-100 mb-2 bg-gradient" style="background-color: #CBCEDB">
+        <div class="card-body d-block d-md-none" data-bs-toggle="collapse" href="#requestcontent<%=[i]%>" role="button">
+            <div class="row">
+                <table>
+                    <tr>
+                        <td rowspan ="2" class="col-1 text-md-center text-center"><i class="
+                            <% if(request[i].requestType=='Electrical') { %>
+                                <%="fas fa-bolt fa-2x"%>
+                            <%}else if(request[i].requestType=='Plumbing') { %>                          
+                                <%="fas fa-sink fa-2x"%>
+                            <%}else if(request[i].requestType=='HVAC') { %>                          
+                                <%="fas fa-temperature-high fa-2x"%>
+                            <%}else if(request[i].requestType=='Cleaning') { %>                          
+                                <%="fas fa-broom fa-2x"%>
+                            <%}else if(request[i].requestType=='Repair') { %>                          
+                                <%="fas fa-tools fa-2x"%>
+                            <%}else if(request[i].requestType=='Others') { %>                          
+                                <%="fas fa-question fa-2x"%>    
+                            <%}%>                    
+                            "></i>
+                        </td>
+                        <td class="col-md-4 col-1 ps-2 ps-sm-0"><b><%=request[i].requestType%></b></td>
+                        <td rowspan ="2" class="col-1 text-sm-center"><%=request[i].unit%></td>
+                        <td rowspan ="2" class="col-1 text-md-center"><%=request[i].status%></td>
+                        <%if(usertype==='Admin'){%>
+                        <td rowspan ="2" class="col-md-3 col-1 text-center ">
+                            <%if(request[i].status=='Pending'){%>
+                            <a href="/create-ticket/<%=request[i]._id%>" class="btn btn-outline-primary mx-md-auto   addWOButton-font">
+                                <div class="text-center d-flex align-items-center"><i class="far fa-plus-square d-none d-sm-block"></i> <div class="d-sm-none d-block w-100">Add</div> <div class="d-none d-sm-block w-100">New W.O</div> </div>
+                            </a>
+                            <%}else{%>                                                  
+                                <button class="btn btn-outline-secondary d-flex align-items-center mx-auto addWOButton-font" disabled><i class="fas fa-check d-none d-sm-block"></i> <div class="d-block w-100">Created</div> </button>                                                     
+                            <%}%>
+                        </td>
+                        <%}%>
+                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toString().slice(4,15)%></td>
+                    </tr>                 
+                </table>
+            </div>
+        </div>
+        <div class="card-body d-none d-md-block">
+            <div class="row">
+                <table>
+                    <tr>
+                        <td rowspan ="2" class="col-1 text-md-center text-center"><i class="
+                            <% if(request[i].requestType=='Electrical') { %>
+                                <%="fas fa-bolt fa-2x"%>
+                            <%}else if(request[i].requestType=='Plumbing') { %>                          
+                                <%="fas fa-sink fa-2x"%>
+                            <%}else if(request[i].requestType=='HVAC') { %>                          
+                                <%="fas fa-temperature-high fa-2x"%>
+                            <%}else if(request[i].requestType=='Cleaning') { %>                          
+                                <%="fas fa-broom fa-2x"%>
+                            <%}else if(request[i].requestType=='Repair') { %>                          
+                                <%="fas fa-tools fa-2x"%>
+                            <%}else if(request[i].requestType=='Others') { %>                          
+                                <%="fas fa-question fa-2x"%>    
+                            <%}%>                    
+                            "></i>
+                        </td>
+                        <td class="col-md-4 col-1 ps-2 ps-sm-0"><b><%=request[i].requestType%></b></td>
+                        <td rowspan ="2" class="col-1 text-sm-center"><%=request[i].unit%></td>
+                        <td rowspan ="2" class="col-1 text-md-center"><%=request[i].status%></td>
+                        <%if(usertype==='Admin'){%>
+                        <td rowspan ="2" class="col-md-3 col-1 text-center ">
+                            <%if(request[i].status=='Pending'){%>
+                            <a href="/create-ticket/<%=request[i]._id%>" class="btn btn-outline-primary mx-md-auto   addWOButton-font">
+                                <div class="text-center d-flex align-items-center"><i class="far fa-plus-square d-none d-sm-block"></i> <div class="d-sm-none d-block w-100">Add</div> <div class="d-none d-sm-block w-100">New W.O</div> </div>
+                            </a>
+                            <%}else{%>                                                  
+                                <button class="btn btn-outline-secondary d-flex align-items-center mx-auto addWOButton-font" disabled><i class="fas fa-check d-none d-sm-block"></i> <div class="d-block w-100">Created</div> </button>                                                     
+                            <%}%>
+                        </td>
+                        <%}%>
+                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toString().slice(4,15)%></td>
+                    </tr>
+                    <tr>                 
+                        <td><%=request[i].details%></td>
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+        <div class="collapse" id="requestcontent<%=[i]%>">
+            <div class="card card-body">
+                <span><b>Detail: </b></span>
+                <span><%=request[i].details%></span>
+            </div>
+        </div>
+    </div>
+    <%}%>
+
+</div>
+
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

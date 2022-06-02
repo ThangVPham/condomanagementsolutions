@@ -1,0 +1,49 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+
+<!------------------------------------------------->
+<div class="search-filter shadow animate__animated animate__fadeIn" style ="background-image: url(../Assets/reservation.jpg); text-shadow: 1px 1px #ffffff;""></div>
+<div class="content-container">
+    <div class="card w-100 mb-3 bg-secondary bg-gradient shadow">
+        <div class="card-body">
+            <div class="row ">
+                <table>
+                    <tr>
+                        <th class="col-1 text-center">Type</th>
+                        <th class="col-1 text-center">Time Slot</th>
+                        <th class="col-1 text-center">Fee</th>
+                        <th class="col-1 text-center">Date</th>
+                        <th class="col-1 text-center">Action</th>                                                 
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+    </div>
+    <%for(let i =0; i<reservation.length; i++){%>
+    <div class="card w-100 mb-2 bg-gradient" style="background-color: #CBCEDB">
+        <div class="card-body">
+            <div class="row">
+                <table>
+                    <tr>
+                        <td class="col-1 text-center"><b><%=reservation[i].amenityType%></b></td>
+                        <td class="col-1 text-center"><%=reservation[i].timeslot%> <%=reservation[i].amenityType=='Guest Suite'?' Night(s)': ''%></td>
+                        <td class="col-1 text-center">$<%=reservation[i].fee.toFixed(2)%></td>                      
+                        <td class="col-1 text-center"><%=reservation[i].date.toString().slice(4,15)%></td>
+                        <td class="col-1 text-center">
+                            <form action="/myreservation/<%=reservation[i]._id%>" method="GET" onsubmit= "return deleteWarning()">
+                                <button class="btn btn-danger" type="submit">Cancel</button>
+                            </form>
+                           
+                        </td>
+                    </tr>               
+                </table>
+            </div>
+        </div>
+    </div>
+    <%}%>
+
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

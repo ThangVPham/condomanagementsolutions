@@ -1,0 +1,134 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="form d-md-block d-none">
+        <form method="POST">
+            <h3><i class="fas fa-receipt"></i> Request Information</h3><hr>
+            <div class="d-flex">
+                <div class="form-column w-50">
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <label for="requester">Full Name</label>
+                      <div class="d-flex mb-3">
+                          <input type="text" class="form-control me-1" id="requester" name="requester" required>
+                      </div>
+                      <label for="phone">Phone</label>
+                      <div class="d-flex">
+                          <input type="text" class="form-control me-1" id="phone" name="phone" required>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-3 pe-1 ">
+                        <label for="requestType">Type of Issues</label>
+                        <select type="text" class="form-control" id="requestType" name="requestType" required>                                  
+                            <option value="Electrical" selected>Electrical</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="Repair">Repair</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="HVAC">HVAC</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>  
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <div class="d-flex mb-3">
+                          <div class="col-6 pe-2">
+                              <label for="unit">Unit Number</label>
+                              <input type="number" class="form-control me-2" id="unit"  name="unit" required min="100">
+                          </div>
+                          <div class="col-6 pe-2 mb-3">
+                            <label for="priority">Priority</label>
+                            <select type="text" class="form-control" id="priority" name="priority" required>
+                                <option value="Low" selected>Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                            </div>          
+                      </div>
+                    </div>                
+                </div>
+                <div class="form-column w-50 d-flex justify-content-center">
+                    <img class="w-75"src="./request.gif" alt="" style="width:300px;">
+                </div>
+            </div>
+  
+            <div class="form-group mb-3">
+              <label for="email">Email (Optional)</label>
+              <input type="text" class="form-control" id="email" placeholder="ex: youremail@example.com" name="email">
+            </div>
+            <div class="form-group mb-3">
+                <label for="details">Details</label>
+                <textarea class="form-control" id="details" rows="3" placeholder="Please provide a brief description of your issue" name="details" ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/myrequest"><button type="button" class="btn btn-secondary">Return</button></a>
+        </form>
+    </div>
+
+
+
+    <div class="form d-block d-md-none">
+        <form method="POST">
+            <h3><i class="fas fa-receipt"></i> Request Information</h3><hr>
+            <div class="d-block">
+                <div class=" w-100 d-flex justify-content-center">
+                    <img src="./request.gif" alt="" style="width:300px;">
+                </div>
+                <div class="w-100">
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <label for="requester">Full Name</label>
+                      <div class="d-flex mb-3">
+                          <input type="text" class="form-control me-1" id="requester" name="requester" required>
+                      </div>
+                      <label for="phone">Phone</label>
+                      <div class="d-flex">
+                          <input type="text" class="form-control me-1" id="phone" name="phone" required>
+                      </div>
+                    </div>
+                    <div class="col-12 pe-2 mb-3">
+                        <label for="requestType">Type of Issues</label>
+                        <select type="text" class="form-control" id="requestType" name="requestType" required>                                  
+                            <option value="Electrical" selected>Electrical</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="Repair">Repair</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="HVAC">HVAC</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <div class="d-flex mb-3">
+                          <div class="col-6 pe-2">
+                              <label for="unit">Unit Number</label>
+                              <input type="number" class="form-control me-2" id="unit"  name="unit" required min="100">
+                          </div>
+                          <div class="col-6  pe-1 ">                         
+                                <label for="priority">Priority</label>
+                                <select type="text" class="form-control" id="priority" name="priority" required>
+                                    <option value="Low" selected>Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                          </div>                
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="email">Email (Optional)</label>
+              <input type="text" class="form-control" id="email" placeholder="ex: youremail@example.com" name="email">
+            </div>
+            <div class="form-group mb-3">
+                <label for="details">Details</label>
+                <textarea class="form-control" id="details" rows="3" placeholder="Please provide a brief description of your issue" name="details" ></textarea>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/myrequest"><button type="button" class="btn btn-secondary">Return</button></a>
+        </form>
+    </div>
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

@@ -1,0 +1,39 @@
+<div class="search-filter shadow animate__animated animate__fadeIn" style ="
+    <% if(title=='My Requests'){ %>
+        <%="background-image: url(../Assets/request-bg.jpg); text-shadow: 1px 1px #ffffff;"%>
+    <%}else if(title=='Work Orders'){%>
+        <%="background-image: url(../Assets/workorder-bg.jpg); color: white"%>
+    <%}else if(title=='Announcements'){%>
+        <%="background-image: url(../Assets/announcement-bg.jpg); color:white; text-shadow: 1px 1px #000000;"%>
+    <%}else if(title=='Apartments'){%>
+        <%="background-image: url(../Assets/apartment-bg.jpg); color:white; text-shadow: 1px 1px #000000;"%>
+    <%}%>
+    ">
+
+    <div class="d-md-flex d-block w-100 justify-content-around pe-2 ">
+        <form class="row w-75 align-items-center mx-auto ">
+            <div class="col-md-6 d-flex mx-auto align-items-center mb-1">
+              <input type="text" class="form-control me-1 mobile-font" id="search" placeholder="Search">
+              <button class="btn btn-info my-2 my-sm-0 mobile-font" type="button"><i class="fas fa-search"></i></button>
+            </div>                                 
+            <div class="col-md-6 d-flex mx-auto align-items-center">
+                <!-- <label class="form-label col-1 mb-0 " for="filter">Filter By: </label> -->
+                <select  class="form-select col me-1 mobile-font" id="filter">
+                    <option selected>-Filter By-</option>
+                    <option>Unit</option>
+                    <option>Status</option>
+                    <option>Type</option>
+                </select>
+                <!-- <label class="form-label col-1 mb-0 " for="sort">Sort By: </label> -->
+                <select class="form-select col ms-1 mobile-font" id="sort">
+                    <option selected>-Sort By-</option>
+                    <option>Date</option>
+                    <option>Status</option>
+                </select>         
+            </div>            
+             
+          </form> 
+                
+    </div>
+    
+</div>
