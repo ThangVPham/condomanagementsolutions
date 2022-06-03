@@ -23,7 +23,7 @@ const workOrderDetailsFormDisplay =  (req,res)=>{
         if(err){
             console.log(err);
         }
-       res.render('workOrderAssign',{title:'Work Order Details', page:'create-order-assign', request:result,ticket:{},usertype:usertype});
+       res.render('workOrderassign',{title:'Work Order Details', page:'create-order-assign', request:result,ticket:{},usertype:usertype});
     })
 }
 

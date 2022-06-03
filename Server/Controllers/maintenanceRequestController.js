@@ -3,7 +3,7 @@ const WorkOrder = require('../Models/workOrder');
 const moment = require('moment');
 const maintenanceRequestDisplay = (req,res)=>{
     let usertype = req.user.userType;
-    res.render('maintenanceRequest',{title:'Maintenance Request', page:'maintenanceReq',usertype:usertype})
+    res.render('maintenancerequest',{title:'Maintenance Request', page:'maintenanceReq',usertype:usertype})
 };
 
 const maintenanceRequestAdd = (req,res)=>{
