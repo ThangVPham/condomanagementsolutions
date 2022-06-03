@@ -13,7 +13,7 @@ const workOrderDisplay = (req,res)=>{
 //GET request - Serve up work ticket form from Create W.O button
 const workOrderCreateTicketFormDisplay = (req,res)=>{
     let usertype = req.user.userType;
-    res.render('workOrderAssign', {title:'Work Order Details', page: 'create-new-workorder', request:{},usertype:usertype});
+    res.render('workOrderassign', {title:'Work Order Details', page: 'create-new-workorder', request:{},usertype:usertype});
 }
 
 //GET request - Serve up work ticket form with information of existing request
@@ -32,7 +32,7 @@ const workOrderEditTicketFormDisplay =  (req,res)=>{
     let usertype = req.user.userType;
     WorkOrder.findOne({_id:req.params.ticket_id},(err,ticket)=>{
         console.log(ticket.dateCreated.toLocaleDateString({timeZone:'GMT'}).slice(0,10))
-        res.render('workOrderAssign',{title:'Edit Order Details', page:'edit-order-assign', ticket:ticket, request:{},usertype:usertype});
+        res.render('workOrderassign',{title:'Edit Order Details', page:'edit-order-assign', ticket:ticket, request:{},usertype:usertype});
     })
 
 }
