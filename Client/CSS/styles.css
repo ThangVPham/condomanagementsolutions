@@ -112,8 +112,39 @@ body{
     color:white;
     background-color: #060813;
     text-align: center;
-
 }
+
+.login-footer{
+    margin: 0 auto;
+    width:100%;
+    background-color: #171921; 
+    text-align: center;
+    position:fixed;
+    bottom:0;
+}
+
+.register-footer{
+    display:flex;
+    margin: 0 auto;
+    width:100%;
+    padding:5px;
+    background-color: #171921; 
+    justify-content: center;
+    align-items: center;
+    font-size: 14px; 
+    color:white;
+}
+.register-footer p{
+    margin:0;
+}
+.login-footer{
+    text-align: center;
+    font-size: 14px;
+    color:white;
+    margin:0;
+}
+
+
 .site-map{
     background-image: linear-gradient( rgba(6, 10, 27, 0.9), rgba(2, 4, 24, 0.4)),url("../Assets/bg-city.jpg");
     padding: 10px 10px;
@@ -227,34 +258,35 @@ body{
 }
 
 .login-body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height:84vh;
+    
+    height:100vh;
+    background-image:
+        linear-gradient(to bottom, rgba(12, 12, 12, 0.6), rgba(11, 12, 12, 0.6)),
+        url(../Assets/bg-city2.jpg);
+        background-size: cover;
+}
+.register-body{
+    height:100%;
     background-image:
         linear-gradient(to bottom, rgba(12, 12, 12, 0.6), rgba(11, 12, 12, 0.6)),
         url(../Assets/bg-city2.jpg);
         background-size: cover;
 }
 
-.login-form-card{
-    color:white;
-    width:600px;
-    margin:0 auto;
-    padding:40px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 2%;
-    text-align: center;
+.login-form{
+    width:30%;
+    height:350px;
+    background-color: rgba(0,0,0,.4);
+    padding: 1%;
+    border-radius: 15px;
 }
-.register-form-card{
-    margin:0 auto;
-    color:white;
-    max-width:600px;
-    padding:10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 2%;
-    text-align: center;
+.register-form{
+    width:50%;
+    background-color: rgba(0,0,0,.4);
+    padding: 1%;
+    border-radius: 15px;
 }
+
 
 
 @media (max-width:1840px){
@@ -285,6 +317,9 @@ body{
     .header-size{
         font-size:25px;
     }
+    .login-form{
+        width:50%;
+    }
 }
 
 @media(max-width:991px){
@@ -310,6 +345,16 @@ body{
         justify-content: center;
         align-items: center;
     }
+    .register-form{
+        width:80%;
+        
+    }
+
+}
+@media(min-width:2000px){
+    .register-body{
+        height:100vh;
+    }
 
 }
 
@@ -327,11 +372,19 @@ body{
     .search-filter{
         height:120px;
     }
+    .login-form{
+        width:90%;
+        padding:20px;
+    }
 }
 
 @media(max-width:567px){
     .banner-top{
         height:60px;
+    }
+    .register-form{
+        width:90%;
+        
     }
 }
 @media(min-width:1300px){
