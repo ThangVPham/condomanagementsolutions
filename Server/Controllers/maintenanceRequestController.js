@@ -27,6 +27,13 @@ const maintenanceRequestAdd = (req,res)=>{
 const myrequestDisplay = (req,res)=>{
     let usertype = req.user.userType;
     let username = req.user.username;
+    if(usertype==='Admin'){
+        MaintenanceRequest.find().sort({dateCreated:-1}).then((result)=>{
+            res.render('myrequest',{title:'My Requests', page:'myrequest', request:result,usertype:usertype})
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
     MaintenanceRequest.find({user:username}).sort({dateCreated:-1}).then((result)=>{
         res.render('myrequest',{title:'My Requests', page:'myrequest', request:result,usertype:usertype})
     }).catch((err)=>{

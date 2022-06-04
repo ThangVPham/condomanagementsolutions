@@ -302,12 +302,7 @@ body{
 
 
 
-/* @media (max-width:1840px){
-    .reservation{
-        max-height: 300px ;
-        overflow-y: scroll;
-    }
-} */
+
 
 @media(max-width:1250px){
     .addWOButton-font{
@@ -394,19 +389,3 @@ body{
         max-width:60%;
     }
 }
-
-/* @media(max-width:576){
-    
-.copy-right{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    color:white;
-    background-color: #060813;
-    text-align: center;
-}
-.site-map{
-    background-image: linear-gradient( rgba(6, 10, 27, 0.9), rgba(2, 4, 24, 0.4)),url("../Assets/bg-city.jpg");
-    padding: 10px 0;
-}
-} */

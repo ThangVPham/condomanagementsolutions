@@ -33,6 +33,9 @@ const processLoginPage =  (req,res,next)=>{
 }
 
 const displayRegisterPage = (req,res)=>{
+    if(req.isAuthenticated()){
+        res.redirect('/')
+    }
     res.render('register',{title:'Register', page:'register'})
 }
 

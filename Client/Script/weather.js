@@ -56,10 +56,6 @@ function getWeatherData(city){
         windSpeed = windSpeed*3.6
         $('.windSpeed').append(windSpeed.toFixed(2) +'km/h');
 
-        console.log(tempMax)
-        console.log(tempMin)
-        console.log(windZpeed) //m/s
-
     
     }).fail((err)=>{
         console.log(err.status);
