@@ -91,13 +91,6 @@ body{
     max-height:350px;
     overflow-y:scroll; 
 }
-.reservation{
-    max-height:350px;
-}
-.reservation a,.announcement  a{
-    text-decoration: none;   
-    
-}
 
 .elevator-bg:hover{
     -webkit-transform: scale(1.01,1.01);
@@ -144,7 +137,9 @@ body{
     margin:0;
 }
 
-
+.reservation{
+    height: 300px;
+}
 .site-map{
     background-image: linear-gradient( rgba(6, 10, 27, 0.9), rgba(2, 4, 24, 0.4)),url("../Assets/bg-city.jpg");
     padding: 10px 10px;
@@ -287,24 +282,33 @@ body{
     border-radius: 15px;
 }
 
+.weather{
+    width:100%;
+    background: url('../Assets/city.gif');
+    color:white;
+    font-family: 'DOSIS', sans-serif;
+  
+}
+.weather-info{
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  
+}
+.citySearch::placeholder{
+    color:white
+}
 
 
-@media (max-width:1840px){
+
+/* @media (max-width:1840px){
     .reservation{
         max-height: 300px ;
         overflow-y: scroll;
     }
-}
+} */
 
-@media (max-width: 1450px){
-    .reservation{
-        padding:0;
-    }
-    .text-light{
-        font-size: 30px;
-    }
-
-}
 @media(max-width:1250px){
     .addWOButton-font{
         font-size:12px;
@@ -326,11 +330,9 @@ body{
 
     .header-size{
         font-size:25px;
-        margin:10px 10px;
+       
     }
-    .reservation{
-        margin: 10px;
-    }
+    
     .side-bar{
         display:none;
     }

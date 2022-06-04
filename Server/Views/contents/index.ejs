@@ -18,15 +18,15 @@
     </div>
     <div class="row col-12 mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2 mb-2 text-dark animate__animated animate__fadeInUp mx-auto">
       <!--Reservations-->
-        <div class="row-sm col-md-5 mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2 mb-2   text-white bg-dark bg-gradient shadow rounded-3  ">
-          <div class="h-100 p-xl-5 p-xxl-5 p-lg-4 ">
-            <h2 class="header-size"><i class="fas fa-bookmark"></i> <a href="/myreservation" style="text-decoration: none; color:white">Your Reservations</a></h2>
+      <div class="row-sm col-md-6 container mb-xxl-4 mb-lg-3 mb-2 text-white reservation">
+        <div>
+            <h4 class="rounded-top px-3 py-1 m-0 bg-primary bg-gradient "><i class="fas fa-bookmark"></i> <a href="/myreservation" style="text-decoration: none; color:white">Your Reservations</a></h4>           
             <div class="reservation">
-              <table class="table table-dark table-striped">
+              <table class="table table-light table-striped">
                 <%if(amenity.length==0){%>
-                  <h6>No Reservations</h6>
+                  <h6 class=" mx-5 my-2"><i class="fas fa-code"></i>  No Reservations</h6>
                 <%}else if(amenity.length < 4){%>
-                <!--<%for(let i=0; i<amenity.length;i++){%>                 -->
+                <%for(let i=0; i<amenity.length;i++){%>                
                   <tr>
                     <th scope="col"><i class="fas fa-code"></i> <%= amenity[i].amenityType %></th>
                     <td scope="col"><small><%= amenity[i].date.toISOString().slice(0,10)%></small></td>                   
@@ -39,10 +39,10 @@
                     <%}%>
                     <td>Fee: $<%=amenity[i].fee.toFixed(2)%></td>
                   </tr>
-                <!--<%}%>    -->
+                <%}%>   
 
                 <%}else{%>
-                <!--<%for(let i=0; i< 4;i++){%>                 -->
+                <%for(let i=0; i< 4;i++){%>              
                     <tr>
                       <th scope="col"><i class="fas fa-code"></i> <%= amenity[i].amenityType %></th>
                       <td scope="col"><small><%= amenity[i].date.toISOString().slice(0,10)%></small></td>                   
@@ -55,61 +55,85 @@
                       <%}%>
                       <td>Fee: $<%=amenity[i].fee.toFixed(2)%></td>
                     </tr>
-                <!--<%}%>    -->
+                <%}%>    
               <%}%>
               </table>        
             </div>
-            
-          </div>
         </div>
-
-
-        
-        <!--Announcements-->
-        <!-- <div class="row-sm col-md-7 mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2 mb-2   bg-light border rounded-3 shadow ">
-          <div class="h-100 p-xl-5 p-lg-4 p-sm-2 pb-2 pb-sm-0">
-            <h2 class="header-size"><i class="fas fa-bullhorn"></i> <a href="/announcement" style="text-decoration: none;">Latest Announcements</a> </h2>
-            <div class="announcement">
-              <ul class="list-group ">
-                <%if(announcement.length==0){%>
-                  <h6><i class="fas fa-code"></i> No Announcements</h6>
-                <%}else{%>
-                <%for(let i=0; i<3;i++){%>     
-                <li class="list-group-item">
-                  <div class="d-flex justify-content-between">
-                    <h5><i class="fas fa-code"></i> <%= announcement[i].title %></h5>
-                    <span><b><%= announcement[i].date.toLocaleDateString('en-US') %></b></span>
+      </div>
+        <!--Weather-->
+      <div class="row-sm col-md-6 container mb-xxl-4 mb-lg-3 mb-2 animate__animated animate__fadeInUp">
+        <h4 class="header-size px-3 py-1 m-0 bg-primary  rounded-top text-light"><i class="fas fa-cloud-sun"></i>Weather</h4>
+        <div class="weather ">
+          <div class="weather-info">
+              <input class="form-control mr-sm-2 bg-transparent citySearch" style="color:white" type="search" placeholder="Enter a City" aria-label="Search">
+              <img src="" class="icon m-0" alt="">
+                <p class="location"></p>
+                <p class="desc m-0 "></p>
+                <p class="currentTemp m-0">CURRENT TEMP: </p>
+                <div class="weather-detail d-flex justify-content-center">
+                  <div>
+                    <p class="tempMin mx-2">MIN: </p>
                   </div>
-                  <p><%= announcement[i].body %></p>
-                </li>
-                <%}%>
-                <%}%>
+                  <div>
+                    <p class="tempMax mx-2">MAX: </p>
+                  </div>                                
+                </div>
+                <p class="windSpeed m-0">WIND SPEED: </p>
                 
-              </ul>
-            </div>
-          </div>
-        </div> -->
-    </div>
-    <!----Moving-->
-    <div class="col-12  mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2  col text-dark bg-gradient bg-primary rounded-3 d-xxl-flex d-xl-flex  d-lg-flex d-md-flex d-sm-block animate__animated animate__fadeInUp">     
-        <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5 ">
-          <img class="rounded-3 w-100 m-md-4" src="./elev2.gif" alt="elevator-animation">
-        </div>
-        <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5 m-sm-4 m-1 ">
-          <div class="w-100 p-2 p-sm-3">
-            <h2 class="fw-bold">Moving?</h2>
-            <p class=" fs-4">Book your own elevator for the most convenient and seamless moving experience.</p>
-            <div class ="text-center">
-              <a href="/elevatorbooking" class="btn btn-warning btn-lg shadow" >Book Elevator</a>
-            </div>
-            
+             
+              
           </div>
           
+      </div>
+      </div>
+      <hr> 
+      <!--Announcement-->     
+      <div class="container d-flex justify-content-center animate__animated animate__fadeInUp">
+          <div class="mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2 text-dark bg-gradient bg-light rounded-3 ">
+            <div class="h-100 p-3">
+              <h2 class="header-size"><i class="fas fa-bullhorn"></i> <a href="/announcement" style="text-decoration: none; color:black">Latest Announcements</a> </h2>
+              <div class="announcement">
+                <ul class="list-group ">
+                  <%if(announcement.length==0){%>
+                    <h6><i class="fas fa-code"></i> No Announcements</h6>
+                  <%}else{%>
+                  <%for(let i=0; i<3;i++){%>     
+                  <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                      <h5><i class="fas fa-code"></i> <%= announcement[i].title %></h5>
+                      <span><b><%= announcement[i].date.toLocaleDateString('en-US') %></b></span>
+                    </div>
+                    <p><%= announcement[i].body %></p>
+                  </li>
+                  <%}%>
+                  <%}%>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+      <hr>
+    </div>
+    
+    <!----Moving-->
+    <div class="container d-flex justify-content-center animate__animated animate__fadeInUp">
+      <div class="row col-12 mb-xxl-4 mb-lg-3 mb-md-2 mb-sm-2 text-dark bg-gradient bg-primary rounded-3 ">
+        <div class="col-md-5 rounded-5 ">
+          <img class="w-100 my-3" src="./elev2.gif" alt="elevator-animation">
         </div>
-        
-        
+        <div class=" col-md-7">
+          <h2 class="fw-bold w-100 mt-md-4 mb-md-4">Moving?</h2>
+          <p class=" fs-4">Book your own elevator for the most convenient and seamless moving experience.</p>
+          <a href="/elevatorbooking" class="btn btn-warning btn-lg shadow mb-3 m-md-0" >Book Elevator</a>
+        </div>        
+      </div>           
     </div>
 </div>
+<div class="d-flex justify-content-center">
+  <hr class="w-50">
+</div>  
 </div>
 
 
