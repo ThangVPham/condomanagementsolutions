@@ -70,13 +70,18 @@ body{
 
 .jumbo-bg{
     background-size:cover;
-    background-image: linear-gradient( rgba(97, 48, 8, 0.5), rgba(5, 5, 56, 0.1)),url("../Assets/condo.jpg");
+    background-image: linear-gradient( rgba(8, 17, 97, 0.5), rgba(5, 5, 56, 0.1)),url("../Assets/condo.jpg");
     background-position:70% 30%;
     background-repeat: no-repeat;
     background-blend-mode: screen;
     text-shadow: 2px 2px #020918;
 }
-
+.jumbo-filter{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%;
+    padding:20px;
+    border-radius: 5px;
+}
 .jumbo-bg:hover{
     -webkit-transform: scale(1.01,1.01);
     -webkit-transition: all 0.3s ease-in-out;

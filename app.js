@@ -82,7 +82,6 @@ app.get('/',isAuth,(req,res)=>{
     let usertype = req.user.userType;
     let name = req.user.firstname;
     let username = req.user.username
-    console.log(username);
         Announcement.find().sort({date:-1}).then((announcement)=>{           
             Booking.find({user:username}).sort({_id:-1}).then((booking)=>{ 
                
