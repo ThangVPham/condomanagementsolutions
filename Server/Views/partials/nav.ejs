@@ -23,13 +23,21 @@
               <i class="fas fa-dolly"></i> Moving
             </a>
           </li>
+          <%if(usertype==='Resident'){%>
           <li>
             <a href="/myrequest" class="<%= title =='My Requests'? "nav-link active text-white":"nav-link text-white" %>" id="myrequest">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-              <i class="fas fa-receipt"></i>  Request
+              <i class="fas fa-receipt"></i> My Requests
             </a>
           </li>
+          <%}%>
           <%if(usertype==='Admin'){%>
+          <li>
+              <a href="/myrequest" class="<%= title =='My Requests'? "nav-link active text-white":"nav-link text-white" %>" id="myrequest">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                <i class="fas fa-receipt"></i>  Requests
+              </a>
+          </li>  
           <li>
             <a href="/workorder" class="<%= title =='Work Orders'? "nav-link active text-white":"nav-link text-white" %>" id="moving" id="workorder">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
