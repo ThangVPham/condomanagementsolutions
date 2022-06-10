@@ -29,16 +29,19 @@ const myrequestDisplay = (req,res)=>{
     let username = req.user.username;
     if(usertype==='Admin'){
         MaintenanceRequest.find().sort({dateCreated:-1}).then((result)=>{
+            console.log(result)
+            res.render('myrequest',{title:'My Requests', page:'myrequest', request:result,usertype:usertype})
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }else{
+        MaintenanceRequest.find({user:username}).sort({dateCreated:-1}).then((result)=>{
             res.render('myrequest',{title:'My Requests', page:'myrequest', request:result,usertype:usertype})
         }).catch((err)=>{
             console.log(err);
         })
     }
-    MaintenanceRequest.find({user:username}).sort({dateCreated:-1}).then((result)=>{
-        res.render('myrequest',{title:'My Requests', page:'myrequest', request:result,usertype:usertype})
-    }).catch((err)=>{
-        console.log(err);
-    })
+
 }
 
 const requestsHandlingProcess = (req,res)=>{

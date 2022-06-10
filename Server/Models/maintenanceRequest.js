@@ -5,7 +5,11 @@ const maintenanceRequestSchema = new Schema({
     requestType: String,
     priority: String,
     unit: Number,
-    dateCreated: Date,
+    dateCreated: {
+        type:Date,
+        default:()=>Date.now(),
+        immutable:true
+    },
     details: String,
     status: String,
     requester: String,

@@ -5,7 +5,10 @@ const bcrypt = require('bcrypt');
 let userSchema = new Schema({
     username: String,
     password: String,
-    email: String,
+    email:{
+        type:String,
+        lowercase:true
+    },
     firstname: String,
     lastname:String,
     apartment: String,
@@ -13,7 +16,11 @@ let userSchema = new Schema({
     phone: String,
     emergencyContact: String,
     emergencyNumber: String,
-    dateCreated: Date
+    dateCreated:{
+        type:Date,
+        default:()=>Date.now(),
+        immutable:true
+    } 
 },{
 collection:'users'});
 

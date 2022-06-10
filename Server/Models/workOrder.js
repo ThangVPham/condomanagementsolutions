@@ -7,7 +7,11 @@ const workOrderSchema = new Schema({
     requester: String,
     unit: String,
     status: String,
-    dateCreated:Date,
+    dateCreated:{
+        type:Date,
+        default:()=>Date.now(),
+        immutable:true
+    },
     dateCompleted: Date,
     employee:String,
     details:String,
