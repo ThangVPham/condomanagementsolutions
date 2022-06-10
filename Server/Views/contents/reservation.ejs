@@ -28,7 +28,7 @@
                         <td class="col-1 text-center"><b><%=reservation[i].amenityType%></b></td>
                         <td class="col-1 text-center"><%=reservation[i].timeslot%> <%=reservation[i].amenityType=='Guest Suite'?' Night(s)': ''%></td>
                         <td class="col-1 text-center">$<%=reservation[i].fee.toFixed(2)%></td>                      
-                        <td class="col-1 text-center"><%=reservation[i].date.toString().slice(4,15)%></td>
+                        <td class="col-1 text-center"><%=reservation[i].date.toISOString().slice(0,10)%></td>
                         <td class="col-1 text-center">
                             <form action="/myreservation/<%=reservation[i]._id%>" method="GET" onsubmit= "return deleteWarning()">
                                 <button class="btn btn-danger" type="submit">Cancel</button>

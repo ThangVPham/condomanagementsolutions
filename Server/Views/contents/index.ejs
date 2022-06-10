@@ -105,7 +105,7 @@
                   <li class="list-group-item">
                     <div class="d-flex justify-content-between">
                       <h5><i class="fas fa-code"></i> <%= announcement[i].title %></h5>
-                      <span><b><%= announcement[i].date.toLocaleDateString('en-US') %></b></span>
+                      <span><b><%= announcement[i].date.toISOString().slice(0,10)%></b></span>
                     </div>
                     <p><%= announcement[i].body %></p>
                   </li>

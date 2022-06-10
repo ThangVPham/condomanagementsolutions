@@ -28,7 +28,7 @@
                 <table>
                     <tr class="mobile-font">
                         <td rowspan ="2" class="col-md-1 col-1 ps-0 ps-sm-2" data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false" >100<%=i%></td>
-                        <td rowspan ="2" class="col-md-2 col-2 ps-2 " data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false"><%=announcement[i].date.toLocaleDateString()%></td>
+                        <td rowspan ="2" class="col-md-2 col-2 ps-2 " data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false"><%=announcement[i].date.toISOString().slice(0,10)%></td>
                         <td rowspan ="2" class="col-md-8 col-6 ps-2" data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false"><b><%=announcement[i].title%></b></td>   
                         <%if(usertype==='Admin'){%>     
                         <td rowspan ="2" class="col-md-1 col-3 text-center">

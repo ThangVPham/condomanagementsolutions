@@ -100,15 +100,15 @@
                           <div class="col-6 pe-2">
                             <label for="dateCreated">Date Created</label>
                             <%if(page=='edit-order-assign'){%>
-                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toLocaleDateString()%>">
+                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toISOString().slice(0,10)%>">
                             <%} else{%>
-                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toLocaleDateString()%>">
+                              <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toISOString().slice(0,10)%>">
                             <%}%> 
                           </div>
                           <div class="col-6  pe-1 ">
                               <label for="dateCompleted">Date Completed</label>
                               <%if(page=='edit-order-assign'){%>
-                                <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCreated%>" >
+                                <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCompleted.toISOString().slice(0,10)%>" >
                               <%} else{%>
                                 <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted">
                               <%}%> 
@@ -245,15 +245,15 @@
                         <div class="col-6 pe-2">
                           <label for="dateCreated">Date Created</label>
                           <%if(page=='edit-order-assign'){%>
-                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toLocaleDateString()%>">
+                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=ticket.dateCreated.toISOString().slice(0,10)%>">
                           <%} else{%>
-                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toLocaleDateString()%>">
+                            <input type="date" class="form-control me-2" id="dateCreated" name="dateCreated" required value="<%=request.dateCreated==null?'': request.dateCreated.toISOString().slice(0,10)%>">
                           <%}%> 
                         </div>
                         <div class="col-6  pe-1 ">
                             <label for="dateCompleted">Date Completed</label>
                             <%if(page=='edit-order-assign'){%>
-                              <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCreated%>" >
+                              <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted" value="<%=ticket.dateCompleted==null? '':ticket.dateCompleted.toISOString().slice(0,10)%>" >
                             <%} else{%>
                               <input type="date" class="form-control me-2" id="dateCompleted" name="dateCompleted">
                             <%}%> 

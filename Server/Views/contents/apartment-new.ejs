@@ -52,11 +52,11 @@
                         <div class="d-flex mb-3">
                             <div class="col-6 pe-2 mb-3">
                                 <label for="dateIn">Date In</label>
-                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toLocaleDateString().slice(0,10)%>">
+                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toISOString().slice(0,10)%>">
                             </div>
                             <div class="col-6 pe-1 mb-3">
                                 <label for="dateOut">Date Out</label>
-                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toLocaleDateString().slice(0,10)%>">                               
+                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toISOString().slice(0,10)%>">                               
                             </div>
                         </div>                     
                     </div>
@@ -130,11 +130,11 @@
                         <div class="d-flex mb-3">
                             <div class="col-6 pe-2 mb-3">
                                 <label for="dateIn">Date In</label>
-                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toLocaleDateString().slice(0,10)%>">
+                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toISOString().slice(0,10)%>">
                             </div>
                             <div class="col-6 pe-1 mb-3">
                                 <label for="dateOut">Date Out</label>
-                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toLocaleDateString().slice(0,10)%>">                               
+                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toISOString().slice(0,10)%>">                               
                             </div>
                         </div>                     
                     </div>

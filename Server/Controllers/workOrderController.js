@@ -3,8 +3,8 @@ const maintenanceRequest = require('../Models/maintenanceRequest');
 //GET request - Serve up all existing work tickets
 const workOrderDisplay = (req,res)=>{
     let usertype = req.user.userType;
-    
-    WorkOrder.find().sort({dateCreated:-1}).then((result)=>{ 
+   
+    WorkOrder.find().sort({dateCreated:-1}).then((result)=>{
         res.render('workOrder',{title:'Work Orders', page:'workOrder',workorder:result,usertype:usertype});
     }).catch((err)=>{
             console.log(err);
@@ -30,8 +30,7 @@ const workOrderDetailsFormDisplay =  (req,res)=>{
 //GET request - Serve up ticket edit form
 const workOrderEditTicketFormDisplay =  (req,res)=>{
     let usertype = req.user.userType;
-    WorkOrder.findOne({_id:req.params.ticket_id},(err,ticket)=>{
-        console.log(ticket.dateCreated.toLocaleDateString({timeZone:'GMT'}).slice(0,10))
+    WorkOrder.findOne({_id:req.params.ticket_id},(err,ticket)=>{   
         res.render('workOrderassign',{title:'Edit Order Details', page:'edit-order-assign', ticket:ticket, request:{},usertype:usertype});
     })
 
@@ -41,7 +40,6 @@ const workOrderEditTicketFormDisplay =  (req,res)=>{
 const workOrderCreateNewProcess = (req,res)=>{
     let newWorkOrder = req.body;
     newWorkOrder.status = 'In-Progress';
-    console.log(newWorkOrder.dateCreated);
     // res.end();
     WorkOrder.create(newWorkOrder,(err)=>{
         if(err){
@@ -72,9 +70,10 @@ const workOrderAssignWorkerProcess = async (req,res)=>{
 //POST request - Process edit existing work ticket
 const workOrderEditTicketProcess = async (req,res)=>{
     let updatedItem = req.body;
-    
-    await WorkOrder.updateOne({_id:req.params.ticket_id},updatedItem)
-    res.redirect('/workorder')
+    let workOrder = await WorkOrder.findById({_id:req.params.ticket_id});
+    await maintenanceRequest.updateOne({_id:workOrder.request_id},{status:updatedItem.status});
+    await WorkOrder.updateOne({_id:req.params.ticket_id},updatedItem);
+    res.redirect('/workorder');
 }
 
 //GET request - delete selected work ticket

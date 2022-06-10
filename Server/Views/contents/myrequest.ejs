@@ -58,7 +58,7 @@
                             <%}%>
                         </td>
                         <%}%>
-                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toString().slice(4,15)%></td>
+                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toISOString().slice(0,10)%></td>
                     </tr>                 
                 </table>
             </div>
@@ -97,7 +97,7 @@
                             <%}%>
                         </td>
                         <%}%>
-                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toString().slice(4,15)%></td>
+                        <td rowspan ="2" class="col-md-2 col-1 text-md-center ps-2 ps-sm-0 addWOButton-font"><%=request[i].dateCreated.toISOString().slice(0,10)%></td>
                     </tr>
                     <tr>                 
                         <td><%=request[i].details%></td>

@@ -34,8 +34,8 @@
                         <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center d-none d-lg-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].size%> sqft</td>
                         <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center d-none d-md-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].numOfBdr%></td>
                         <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center text-xl-start" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].availability%></td>                                           
-                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateIn.toLocaleDateString()%></td>   
-                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateOut == null? "-" : apartment[i].dateOut.toLocaleDateString()%></td>   
+                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateIn.toISOString().slice(0,10)%></td>   
+                        <td rowspan ="2" class="col-1 ps-3 d-none d-xl-table-cell" data-bs-toggle="collapse" href="#apartmentdetail<%=[i]%>" role="button"><%=apartment[i].dateOut == null? "-" : apartment[i].dateOut.toISOString().slice(0,10)%></td>   
                         <td rowspan ="2" class="col-1 ps-3 ps-lg-0 text-lg-center">                            
                             <a href="/apartment/edit/<%=apartment[i]._id%>"><i class="fas fa-edit me-3"></i></a>                                                          
                             <a href="/apartment/delete/<%=apartment[i]._id%>"><i class="fas fa-trash"></i></a>                          
@@ -63,11 +63,11 @@
               </div>
               <div class="d-xl-none">
                 <span><b>Move In Date: </b></span>
-                <span><%=apartment[i].dateIn.toLocaleDateString()%></span>
+                <span><%=apartment[i].dateIn.toISOString().slice(0,10)%></span>
               </div>
               <div class="d-xl-none">
                 <span><b>Move Out Date: </b></span>
-                <span><%=apartment[i].dateOut== null? "N/A" : apartment[i].dateOut.toLocaleDateString()%></span>
+                <span><%=apartment[i].dateOut== null? "N/A" : apartment[i].dateOut.toISOString().slice(0,10)%></span>
               </div><hr>
               <div>
                 <h6><b>Additonal Information: </b></h6>

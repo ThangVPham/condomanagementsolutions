@@ -57,8 +57,6 @@ const requestsHandlingProcess = (req,res)=>{
     //Create a new work ticket when request is approved
     if(status=='Approved'){
         let newWorkOrder = new WorkOrder();
-        let time = moment().format();
-        console.log(time);
         MaintenanceRequest.findById({_id:id},(err,request)=>{
             if(err){
                 console.log(err);
@@ -72,7 +70,7 @@ const requestsHandlingProcess = (req,res)=>{
             newWorkOrder.user = request.user;
             newWorkOrder.unit = request.unit;
             newWorkOrder.status = 'Pending'
-            newWorkOrder.dateCreated = time;
+            
             console.log(newWorkOrder);
 
             WorkOrder.findOne({_id:id},(err,result)=>{
