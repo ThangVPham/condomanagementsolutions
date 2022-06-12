@@ -1,0 +1,158 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="form d-none d-md-block">
+        <form>
+            <h3><i class="fas fa-building"></i> Apartment Info</h3><hr>
+            <div class="d-flex">
+                <div class="form-column w-50">
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <label for="primaryOccupant">Primary Occupant</label>
+                      <div class="d-flex mb-3">
+                        <input class="form-control me-2" type="text"id="primaryOccupant" placeholder="Full Name" name="primaryOccupant" value="<%=apartment.primaryOccupant==null?'':apartment.primaryOccupant%>">
+                      </div>
+                      <label for="phone">Phone</label>
+                      <div class="d-flex">
+                          <input type="text" class="form-control me-1" id="phone" placeholder="Phone Number" name="phone" value="<%=apartment.phone==null?'':apartment.phone%>">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <div class="d-flex mb-3">
+                          <div class="col-6 pe-2">
+                              <label for="unitNumber">Unit Number</label>
+                              <input type="text" class="form-control me-2" id="unitNumber" placeholder="#" name="unitNumber" value="<%=apartment.unitNumber==null?'':apartment.unitNumber%>">
+                          </div>
+                          <div class="col-6  pe-1 ">
+                              <label for="size">Unit Size</label>
+                              <input type="number" class="form-control me-2" id="size" placeholder="Sqrt ft" name="size" value="<%=apartment.size==null?'':apartment.size%>">
+                          </div>                
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                        <div class="d-flex mb-3">
+                            <div class="col-6 pe-2">
+                                <label for="numOfBdr">No. Of Bedroom</label>
+                                <input type="text" class="form-control me-2" id="numOfBdr" name="numOfBdr" value="<%=apartment.numOfBdr==null?'':apartment.numOfBdr%>">
+                            </div>
+                            <div class="col-6 pe-1">
+                                <label for="availability">Available</label>
+                                <select type="text" class="form-control" id="availability">
+                                    <%if(apartment.numOfBdr){%>
+                                        <option value="<%=apartment.numOfBdr%>" selected><%=apartment.numOfBdr%></option>
+                                    <%}%>
+                                    <option value="Yes" selected>Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                        <div class="d-flex mb-3">
+                            <div class="col-6 pe-2 mb-3">
+                                <label for="dateIn">Date In</label>
+                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toISOString().slice(0,10)%>">
+                            </div>
+                            <div class="col-6 pe-1 mb-3">
+                                <label for="dateOut">Date Out</label>
+                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toISOString().slice(0,10)%>">                               
+                            </div>
+                        </div>                     
+                    </div>
+                    
+                </div>
+                <div class="form-column w-50 d-flex justify-content-center">
+                    <img src="/apartment.gif" alt="" style="width:300px;">
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="additionalInfo">Details</label>
+                <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Apartment Descriptions" name="additionalInfo"><%=apartment.additionalInfo==null?'':apartment.additionalInfo%></textarea>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/apartment"><button type="button" class="btn btn-secondary">Return</button></a>
+            
+          </form>
+    </div>
+
+    <div class="form d-block d-md-none">
+        <form>
+            <h3><i class="fas fa-building"></i> Apartment Info</h3><hr>
+            <div class="d-block">
+                <div class="form-column w-100 d-flex justify-content-center">
+                    <img src="./apartment.gif" alt="" style="width:300px;">
+                </div>
+                <div class="form-column w-100">
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <label for="primaryOccupant">Primary Occupant</label>
+                      <div class="d-flex mb-3">
+                        <input class="form-control me-2" type="text"id="primaryOccupant" placeholder="Full Name" name="primaryOccupant" value="<%=apartment.primaryOccupant==null?'':apartment.primaryOccupant%>">
+                      </div>
+                      <label for="phone">Phone</label>
+                      <div class="d-flex">
+                        <input type="text" class="form-control me-1" id="phone" placeholder="Phone Number" name="phone" value="<%=apartment.phone==null?'':apartment.phone%>">
+                    </div>
+                    </div>
+                    
+                    <div class="form-group col-md-6 mb-3 w-100">
+                      <div class="d-flex mb-3">
+                        <div class="col-6 pe-2">
+                            <label for="unitNumber">Unit Number</label>
+                            <input type="text" class="form-control me-2" id="unitNumber" placeholder="#" name="unitNumber" value="<%=apartment.unitNumber==null?'':apartment.unitNumber%>">
+                        </div>
+                        <div class="col-6  pe-1 ">
+                            <label for="size">Unit Size</label>
+                            <input type="number" class="form-control me-2" id="size" placeholder="Sqrt ft" name="size" value="<%=apartment.size==null?'':apartment.size%>">
+                        </div>               
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                        <div class="d-flex mb-3">
+                            <div class="col-6 pe-2">
+                                <label for="numOfBdr">No. Of Bedroom</label>
+                                <input type="text" class="form-control me-2" id="numOfBdr" name="numOfBdr" value="<%=apartment.numOfBdr==null?'':apartment.numOfBdr%>">
+                            </div>
+                            <div class="col-6 pe-1">
+                                <label for="availability">Available</label>
+                                <select type="text" class="form-control" id="availability">
+                                    <%if(apartment.numOfBdr){%>
+                                        <option value="<%=apartment.numOfBdr%>" selected><%=apartment.numOfBdr%></option>
+                                    <%}%>
+                                    <option value="Yes" selected>Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div class="form-group col-md-6 mb-3 w-100">
+                        <div class="d-flex mb-3">
+                            <div class="col-6 pe-2 mb-3">
+                                <label for="dateIn">Date In</label>
+                                <input type="date" class="form-control me-2" id="dateIn" name="dateIn" value="<%=apartment.dateIn==null?'':apartment.dateIn.toISOString().slice(0,10)%>">
+                            </div>
+                            <div class="col-6 pe-1 mb-3">
+                                <label for="dateOut">Date Out</label>
+                                <input type="date" class="form-control" id="dateOut" name="dateOut" value="<%=apartment.dateOut==null?'':apartment.dateOut.toISOString().slice(0,10)%>">                               
+                            </div>
+                        </div>                     
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="form-group mb-3">
+                <label for="additionalInfo">Details</label>
+                <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Apartment Descriptions" name="additionalInfo"><%=apartment.additionalInfo==null?'':apartment.additionalInfo%></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/apartment"><button type="button" class="btn btn-secondary">Return</button></a>
+            
+          </form>
+    </div>
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

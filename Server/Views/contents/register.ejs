@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%=title%></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="/CSS/styles.css" type="text/css"> 
+        <link rel="icon" type="image/png" href="/logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+        <div class="register-body">
+            <div>
+                <div class="top-nav"> 
+                    <div class="top-logo " style="display:flex; justify-content: center;">
+                        <a href="/" >
+                            <img src="/logo1.png" alt="company-logo">
+                        </a>
+                    </div>
+                </div>
+                <div class=" d-flex justify-content-center mt-5 pb-3  animate__animated animate__fadeInDown">
+                    <div class="register-form "  style="color:white">
+                        <h3 class="mb-3">Register</h3>
+                        <hr class="text-light">
+                        <form class ="row g-3" method="POST">
+                            <div class="mt-2 row">
+                                <h6>Login Information</h6>
+                                <div class="col-md-6 ">
+                                    <label for="username" class="form-label">User Name</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                  </div>
+                            </div>
+                            <hr>
+                            <div class=" row">
+                                <h6>Personal Detail</h6>
+                                <div class="col-md-6 ">
+                                    <label for="firstname" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="username" name="firstname" required>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label for="lastname" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                                  </div>
+                                  <div class="col-12 mt-2">
+                                    <label for="email" class="form-label ">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"  placeholder="example@email.com" required>
+                                  </div>
+                                  <div class="col-md-6 mt-2">
+                                    <label for="apartment" class="form-label">Apartment Number</label>
+                                    <input type="text" class="form-control" id="apartment" name="apartment" >
+                                  </div>
+                                  <div class="col-md-6 mt-2">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" required>
+                                  </div>
+                            </div>
+                            <hr>
+                            <div class=" row">
+                                <h6>Emergency Contact</h6>
+                                <div class="col-12 mt-2">
+                                    <label for="emergencyContact" class="form-label ">Full Name</label>
+                                    <input type="text" class="form-control" id="emergencyContact" name="emergencyContact">
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <label for="emergencyNumber" class="form-label ">Phone Number</label>
+                                    <input type="text" class="form-control" id="emergencyNumber" name="emergencyNumber">
+                                  </div>
+                                </div>
+
+                           
+                           
+                            <div class="w-100 text-center pe-5">
+                                <button type="submit" class="btn btn-warning mt-md-3 m-0 ">Register</button>
+                                <a href="/login" class="btn btn-primary mt-md-3 m-0">Back</a>
+                            </div>
+                           
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <footer class="register-footer">
+            <p>&copy;2022. Condo Management Solutions Inc. All rights reserved.</p>
+        </footer>  
+       
+    </body>
+    </html>

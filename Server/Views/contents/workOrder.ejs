@@ -1,0 +1,83 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+<%- include('../partials/search-bar.ejs')%>
+<!------------------------------------------------->
+<div class="content-container ">
+    <div class="card w-100 mb-md-3 mb-1 bg-md-secondary bg-md-gradient bg-secondary shadow">
+        <div class="card-body">
+            <div class="row ">
+                <table>
+                    <tr class="d-md-flex w-100">
+                        <th class="col-2 col-md-1 ps-2 ps-xl-4 text-start">#</th>
+                        <th class="col-2 col-md-1 col-xl-1 text-start text-md-end text-xl-center">Type</th>
+                        <th class="col-2 col-xl-1 text-start text-md-center text-lg-end">Location</th>
+                        <th class="col-3 col-md-2 col-xl-2 text-center text-md-start text-md-center text-xl-center ps-xl-5">Priority</th>
+                        <th class="col-md-2 col-xl-1 d-none d-md-block text-start text-md-start text-xl-center ps-xl-4">Employee</th>
+                        <th class="col-2 col-lg-2 col-xl-1 text-start text-lg-center  text-xl-end">Status</th>                      
+                        <th class="col-md-2 col-xl-2 d-none d-xl-block text-md-end pe-xl-3">Date Created</th>
+                        <th class="col-md-2 col-xl-2 d-none d-xl-block text-md-center">Date Completed</th>
+                        <th class="col-md-1 col-lg-2 col-xl-1 d-none d-md-block text-md-end pe-lg-2">Action</th>
+                    </tr>        
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <%for(let i =0; i<workorder.length; i++){%>
+        <!--Card-->
+    <div class="card w-100 mb-1 mb-md-2 bg-gradient" style="background-color: #CBCEDB">
+        <div class="card-body">
+            <a  class="row text-decoration-none text-black fw-normal">
+                <table>
+                    <tr>
+                        <td class="col-2 col-md-1 text-start text-md-center text-xl-start ps-xl-4" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" >200<%=i%></i></td>
+                        <td class="col-2 col-md-1 text-start text-lg-center text-xl-start" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><b><%=workorder[i].requestType%></b></td>
+                        <td class="col-md-1 col-2 col-xl-1 text-center text-md-center text-xl-start" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].unit%></td>
+                        <td class="col-3 col-md-1 col-lg-1 col-xl-1  text-md-center text-center text-xl-start" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].priority%></td>                       
+                        <td class="col-3 col-md-2 col-xl-1 text-start text-md-center text-xl-start d-none d-md-table-cell " data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].employee%></td>              
+                        <td class="col-2 col-lg-2 col-xl-1 text-start text-lg-center text-xl-start" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].status%></td>                        
+                        <td class="col-lg-1 col-xl-1 text-md-center text-start text-xl-start d-none d-xl-table-cell" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].dateCreated==null? "-":workorder[i].dateCreated.toISOString().slice(0,10)%></td>
+                        <td class="col-lg-1 col-xl-1 text-md-center text-start text-xl-center d-none d-xl-table-cell" data-bs-toggle="collapse" href="#content<%=[i]%>" role="button" ><%=workorder[i].dateCompleted == null? "-" : workorder[i].dateCompleted.toISOString().slice(0,10)%></td>
+                        <td class="col-md-1 col-xl-1 text-lg-center text-start text-xl-end pe-xl-2 d-none d-md-table-cell">
+                            <a href="/edit-ticket/<%=workorder[i]._id%>"><i class="fas fa-edit me-3"></i></a>                                                          
+                            <a href="/edit-ticket/delete/<%=workorder[i]._id%>"><i class="fas fa-trash"></i></a> 
+                        </td>
+                    </tr>
+                 
+                </table>
+            </a >          
+        </div>
+    </div>
+    <!--Collapsed card body-->
+    <div class="collapse" id="content<%=[i]%>">
+        <div class="card mb-3 card-body">
+            <div>
+                <span><b>Date Created:</b></span>
+                <span><%=workorder[i].dateCreated==null? "-":workorder[i].dateCreated.toISOString().slice(0,10)%></span>
+            </div>
+            <div>
+                <span><b>Date Completed:</b></span>
+                <span><%=workorder[i].dateCompleted == null? "N/A" : workorder[i].dateCompleted.toISOString().slice(0,10)%></span>
+            </div>
+            <div class="d-table-cell d-md-none">
+                <span><b>Employee:</b></span>
+                <span><%=workorder[i].employee%></span>
+            </div>
+            <div>
+                <span><b>Detail:</b></span>
+                <span><%=workorder[i].details%></span>
+            </div>
+            <div class="text-end">
+                <span><a href="/edit-ticket/<%=workorder[i]._id%>"><i class="fas fa-edit me-3"></i></a></span>                                                     
+                <span><a href="/edit-ticket/delete/<%=workorder[i]._id%>"><i class="fas fa-trash"></i></a></span>
+            </div>
+        </div>
+    </div>
+    <%}%>
+
+
+</div>
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

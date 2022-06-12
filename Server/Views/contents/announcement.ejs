@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs')%>
+<%- include('../partials/content-dir.ejs')%>
+<%- include('../partials/search-bar.ejs')%>
+
+<!------------------------------------------------->
+<div class="content-container">
+    <div class="card w-100 mb-3 bg-secondary bg-gradient shadow">
+        <div class="card-body">
+            <div class="row">
+                <table>
+                    <tr class="mobile-font">
+                        <th class="col-md-1 col-1 ps-2">ID</th>
+                        <th class="col-md-2 col-4 ps-2">Date</th>
+                        <th class="col-md-8 col-5 ps-2">Subject</th>
+                        <%if(usertype==='Admin'){%>
+                        <th class="col-md-1 col-2 text-xl-center">Action</th>
+                        <%}%>
+                    </tr>                  
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%for(let i =0; i<announcement.length; i++){%>
+    <div class="card w-100 bg-gradient mb-1"  style="background-color: #CBCEDB">
+        <div class="card-body">
+            <div class="row" >
+                <table>
+                    <tr class="mobile-font">
+                        <td rowspan ="2" class="col-md-1 col-1 ps-0 ps-sm-2" data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false" >100<%=i%></td>
+                        <td rowspan ="2" class="col-md-2 col-2 ps-2 " data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false"><%=announcement[i].date.toISOString().slice(0,10)%></td>
+                        <td rowspan ="2" class="col-md-8 col-6 ps-2" data-bs-toggle="collapse" href="#announcement-content<%=i%>"  role="button" aria-expanded="false"><b><%=announcement[i].title%></b></td>   
+                        <%if(usertype==='Admin'){%>     
+                        <td rowspan ="2" class="col-md-1 col-3 text-center">
+                            <a href="/announcement/edit/<%=announcement[i]._id%>"><i class="fas fa-edit me-3"></i></a>                                                          
+                            <a href="/announcement/delete/<%=announcement[i]._id%>"><i class="fas fa-trash"></i></a>  
+                        </td>   
+                        <%}%>                    
+                    </tr>                                                  
+                </table>  
+            </div>       
+        </div>
+    </div>
+    <div class="collapse mb-2" id="announcement-content<%=i%>">
+        <div class="card card-body"><%=announcement[i].body%></div>
+    </div> 
+    <%}%>
+</div>
+
+
+<!------------------------------------------------->
+
+<%- include('../partials/footer.ejs')%>
+</div>

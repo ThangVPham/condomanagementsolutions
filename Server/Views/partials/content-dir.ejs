@@ -1,0 +1,93 @@
+<div class="banner-top shadow-lg"></div>
+<div class="content-dir ps-0 ps-lg-2 pe-5 py-2 fs-2 shadow-lg d-flex justify-content-between align-items-center ">
+        <nav class="navbar navbar-light d-lg-none d-block">
+            <div class="ps-2 d-flex">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            </div>
+            <div class="collapse navbar-collapse collapse-nav-content" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
+                  <div class="collapse-nav-hr"></div>
+                  <li class="nav-item mx-5 ">
+                    <a class="nav-link text-white " aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/amenity"><i class="fas fa-swimming-pool"></i> Amenities</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" aria-current="page" href="/moving"><i class="fas fa-dolly"></i> Moving</a>
+                  </li>
+                  <%if(usertype==='Admin'){%>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/myrequest"><i class="fas fa-receipt"></i> Requests</a>
+                  </li>      
+                  <%}else{%>
+                    <li class="nav-item mx-5">
+                      <a class="nav-link text-white" href="/myrequest"><i class="fas fa-receipt"></i> My Requests</a>
+                    </li>  
+                    <%}%>
+                  <%if(usertype==='Admin'){%>       
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" aria-current="page" href="/workorder"><i class="fas fa-clipboard"></i> Work Orders</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/apartment"><i class="fas fa-building"></i> Apartment Units</a>
+                  </li>
+                  <%}%>
+                  <div class="collapse-nav-hr"></div>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/announcement"><i class="fas fa-bell"></i>  Announcement</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" aria-current="page" href="/myreservation"><i class="fas fa-address-book"></i> Reservation</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="#"><i class="fas fa-sitemap"></i> Staff Directory</a>
+                  </li>
+                  <div class="collapse-nav-hr"></div>
+                  <li class="nav-item mx-5 ">
+                    <a class="nav-link text-white " aria-current="page" href="/parking"><i class="fas fa-parking"></i> Parking</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/contact-us"><i class="far fa-list-alt"></i> Contact Us</a>
+                  </li>
+                  <li class="nav-item mx-5">
+                    <a class="nav-link text-white" href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                  </li>
+                
+                </ul>
+            </div>      
+        </nav>
+        <div>
+          <%=title%>
+        </div> 
+
+
+    <% if(title=='My Requests'){%>
+    <a href="/maintenancerequest">
+        <button type="button" class="btn btn-warning">
+            <i class="fas fa-plus"></i> Create New Request
+        </button>   
+    </a>
+    <%}else if (title=='Work Orders'){%>
+        <a href="/create-ticket">
+            <button type="button" class="btn btn-warning me-3">
+                <i class="fas fa-plus"></i> Create New Ticket
+            </button>
+        </a>
+    <%}else if (title=='Announcements' && usertype ==='Admin'){%>
+        <a href="/create-announcement" class="text-decoration-none">
+            <button type="button" class="btn btn-warning  d-flex align-items-center ">
+                <i class="fas fa-plus"></i> <div class="d-flex d-sm-none"> New</div>  <div class="d-none d-sm-flex"> New Announcement</div> 
+            </button>
+        </a>
+    <%}else if (title=='Apartments'){%>
+        <a href="/new-unit">
+            <button type="button" class="btn btn-warning ">
+                <i class="fas fa-plus"></i> Add Unit
+            </button>
+        </a>
+        <%}%>
+
+</div>
