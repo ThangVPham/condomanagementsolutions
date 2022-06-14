@@ -48,9 +48,16 @@
                                     <label for="lastname" class="form-label">Last Name</label>
                                     <input type="text" class="form-control" id="lastname" name="lastname" required>
                                   </div>
-                                  <div class="col-12 mt-2">
+                                  <div class="col-6 mt-2">
                                     <label for="email" class="form-label ">Email</label>
                                     <input type="email" class="form-control" id="email" name="email"  placeholder="example@email.com" required>
+                                  </div>
+                                  <div class="col-6 mt-2">
+                                    <label for="userType" class="form-label ">User Type</label>
+                                    <select class="form-select" aria-label="Default select example" name="userType" id="userType" required>                                     
+                                        <option value="Admin">Admin</option>
+                                        <option selected value="Resident">Resident</option>                                   
+                                      </select>
                                   </div>
                                   <div class="col-md-6 mt-2">
                                     <label for="apartment" class="form-label">Apartment Number</label>

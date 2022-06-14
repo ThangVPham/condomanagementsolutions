@@ -3,7 +3,7 @@ const Announcement = require('../Models/announcement');
 const announcementDisplay = (req,res)=>{
     let usertype = req.user.userType;
     Announcement.find().sort({date:-1}).then((result)=>{
-        res.render('announcement',{title:'Announcements' ,announcement: result,usertype:usertype});
+        res.render('announcement',{title:'Announcements' ,announcement: result,usertype:usertype, page:'announcements'});
     }).catch((err)=>{
         console.log(err);
     })
