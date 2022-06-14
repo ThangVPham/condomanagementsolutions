@@ -49,7 +49,6 @@ const processRegisterPage = (req,res) =>{
         }
         if(!user){
             let newUser = req.body
-            newUser.userType = 'Resident'
         
             User.create(newUser, async(err)=>{
                 if(err){
