@@ -4,7 +4,7 @@ const apartmentDisplay =(req,res)=>{
     let usertype = req.user.userType;
     Apartment.find().sort({unitNumber:1})
     .then((result)=>{
-        res.render('apartment',{title:'Apartments',apartment:result, usertype:usertype});
+        res.render('apartment',{title:'Apartments',apartment:result, usertype:usertype, page:'apartment'});
     })
     .catch((err)=>{
         console.log(err);
@@ -33,7 +33,7 @@ const apartmentUnitDisplay = (req,res)=>{
     const id = req.params.id;
     Apartment.findById(id)
     .then((result)=>{
-        res.render('apartmentDetails',{apartment:result, title:'Apartment Details',usertype:usertype});
+        res.render('apartmentDetails',{apartment:result, title:'Apartment Details',usertype:usertype, page:'single apartment'});
     })
     .catch((err)=>{
         console.log(err);
