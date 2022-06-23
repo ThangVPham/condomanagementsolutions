@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/announcement', isAuth,announcementController.announcementDisplay)
 router.get('/create-announcement', isAuth,announcementController.announcementAddForm)
 //Add
-router.post('/announcement/add', isAuth,announcementController.announcementAddProcess)
+router.post('/create-announcement', isAuth,announcementController.announcementAddProcess)
 //Edit
 router.get('/announcement/edit/:id', isAuth,announcementController.announcementEditForm)
 router.post('/announcement/edit/:id', isAuth,announcementController.announcementEditProcess)

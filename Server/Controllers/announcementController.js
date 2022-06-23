@@ -18,11 +18,12 @@ const announcementAddProcess = (req,res)=>{
     
     const newAnnouncement = {
         title: req.body.title,
-        body: req.body.memobody,
-        date: Date.now(),
-        user: 'a',
-        important: req.body.important
+        body: req.body.body,
+        user: 'Management',
+        priority: req.body.priority,
+        type: req.body.type
     }
+
     Announcement.create(newAnnouncement,(err)=>{
         if(err){
             console.log(err);

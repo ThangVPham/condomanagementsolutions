@@ -10,7 +10,10 @@ const announcement = new Schema({
         type: String,
         required: true
     },
-    date: Date,
+    date: {
+        type:Date,
+        default: Date.now
+    },
     priority:{
         type: String,
         required: true
@@ -18,8 +21,12 @@ const announcement = new Schema({
     type:{
         type:String,
         required:true
+    },
+    user:{
+        type:String
     }
 });
 
 const Announcement = mongoose.model('announcement', announcement);
+
 module.exports = Announcement;
