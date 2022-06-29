@@ -3,11 +3,7 @@ const Announcement = require('../Models/announcement');
 const announcementDisplay = (req,res)=>{
     let usertype = req.user.userType;
     Announcement.find().sort({date:-1}).then((result)=>{
-<<<<<<< HEAD
         res.render('announcement',{title:'Announcements' ,announcement: result,usertype:usertype, page:'announcements'});
-=======
-        res.render('announcement',{title:'Announcements' ,announcement: result,usertype:usertype});
->>>>>>> 17174505b80d5ba118da070e1e97c5ef8c749744
     }).catch((err)=>{
         console.log(err);
     })
@@ -22,20 +18,12 @@ const announcementAddProcess = (req,res)=>{
     
     const newAnnouncement = {
         title: req.body.title,
-<<<<<<< HEAD
         body: req.body.body,
         user: 'Management',
         priority: req.body.priority,
         type: req.body.type
     }
 
-=======
-        body: req.body.memobody,
-        date: Date.now(),
-        user: 'a',
-        important: req.body.important
-    }
->>>>>>> 17174505b80d5ba118da070e1e97c5ef8c749744
     Announcement.create(newAnnouncement,(err)=>{
         if(err){
             console.log(err);

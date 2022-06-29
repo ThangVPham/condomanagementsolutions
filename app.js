@@ -18,7 +18,7 @@ const isAuth = require('./authentication').isAuth
 //----Middlewares------
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -52,7 +52,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"http://localhost:3001",
     credentials: true
 }));
 
