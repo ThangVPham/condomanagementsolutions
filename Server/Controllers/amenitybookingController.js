@@ -61,7 +61,11 @@ const myreservationDisplay = (req,res)=>{
     let usertype = req.user.userType;
     let username = req.user.username;
     Booking.find({user:username}).sort({date:-1}).then((result)=>{
+<<<<<<< HEAD
         res.render('reservation',{title:'My Reservations' ,reservation: result, usertype:usertype, page:'myreservations'});
+=======
+        res.render('reservation',{title:'My Reservations' ,reservation: result, usertype:usertype});
+>>>>>>> 17174505b80d5ba118da070e1e97c5ef8c749744
 
     }).catch((err)=>{
         console.log(err);

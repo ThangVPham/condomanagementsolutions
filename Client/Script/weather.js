@@ -31,6 +31,10 @@ function getWeatherData(city){
     }
  
     $.getJSON(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=82b4f0f4d84768ff85d0be9a4be2ee39`,function(data){
+<<<<<<< HEAD
+=======
+        console.log(data)
+>>>>>>> 17174505b80d5ba118da070e1e97c5ef8c749744
         var icon = data.weather[0].icon;
         $('.icon').attr('src', `https://openweathermap.org/img/wn/${icon}@2x.png`);
        
@@ -57,6 +61,10 @@ function getWeatherData(city){
 
     
     }).fail((err)=>{
+<<<<<<< HEAD
+=======
+        console.log(err.status);
+>>>>>>> 17174505b80d5ba118da070e1e97c5ef8c749744
         $('.currentTemp').append('N/A');
         $('.location').append('LOCATION: N/A');
         $('.tempMin').append('N/A');
