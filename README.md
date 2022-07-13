@@ -12,7 +12,7 @@
 ## Announcement View:
 ![announcements](https://user-images.githubusercontent.com/78657808/178757722-a3b45849-dbdb-41f9-b5d4-83117426d0fa.jpg)
 
-## Amenities View:
+## Amenities:
 ![amenities](https://user-images.githubusercontent.com/78657808/178756977-06c573e2-353b-4652-9e84-cecaf9410dd9.jpg)
 ![amenity-booking](https://user-images.githubusercontent.com/78657808/178757024-38fbd6f7-dc64-44ae-9743-7f16da9a4a73.jpg)
 
