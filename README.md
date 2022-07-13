@@ -33,6 +33,26 @@
 ## Contact Form:
 ![contact-form](https://user-images.githubusercontent.com/78657808/178757787-e409dc91-1593-4ae7-b3c7-6152edc99df1.jpg)
 
+##-------------------------------------------------------------------------------------------------------------------
+#Management Access
+## Homepage:
+![admin-homepage](https://user-images.githubusercontent.com/78657808/178758655-6488c4ee-928d-4b9e-bcc5-18f4ab8f4ed8.jpg)
+
+## Tenants' Requests:
+![requests-from-tenent](https://user-images.githubusercontent.com/78657808/178758888-6728f973-13b3-4b94-a3c9-e3b02d723288.jpg)
+
+## Work Orders:
+![all-work-orders](https://user-images.githubusercontent.com/78657808/178758741-3ed4bc1a-d3d9-492d-a85b-fe358582cdfb.jpg)
+![create-work-order](https://user-images.githubusercontent.com/78657808/178758757-6b132b66-43fe-45ca-a022-db25b6207a21.jpg)
+
+## Announcements:
+![view-announcement](https://user-images.githubusercontent.com/78657808/178758974-e7a6cad0-2a7f-4f0f-b187-f00e256d4548.jpg)
+![create-new-announcement](https://user-images.githubusercontent.com/78657808/178758988-b7790f2c-1d30-454c-b1dc-4b5bda27a127.jpg)
+
+# Apartment Units:
+![view-all-units](https://user-images.githubusercontent.com/78657808/178759063-5f66073f-e793-46fa-a806-ebd85b4274c9.jpg)
+![create-new-unit](https://user-images.githubusercontent.com/78657808/178759087-3452e92a-a4fe-4775-8bcb-9021d75edb17.jpg)
+
 
 
 
