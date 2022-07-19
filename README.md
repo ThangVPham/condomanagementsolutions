@@ -51,9 +51,14 @@ https://condomgtsolutions.herokuapp.com/login
 ![view-announcement](https://user-images.githubusercontent.com/78657808/178758974-e7a6cad0-2a7f-4f0f-b187-f00e256d4548.jpg)
 ![create-new-announcement](https://user-images.githubusercontent.com/78657808/178758988-b7790f2c-1d30-454c-b1dc-4b5bda27a127.jpg)
 
-# Apartment Units:
+## Apartment Units:
 ![view-all-units](https://user-images.githubusercontent.com/78657808/178759063-5f66073f-e793-46fa-a806-ebd85b4274c9.jpg)
 ![create-new-unit](https://user-images.githubusercontent.com/78657808/178759087-3452e92a-a4fe-4775-8bcb-9021d75edb17.jpg)
+
+#Features to be implemented:
+Filter search
+Contact Form
+Staff Directory
 
 
 
