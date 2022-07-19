@@ -56,9 +56,9 @@ https://condomgtsolutions.herokuapp.com/login
 ![create-new-unit](https://user-images.githubusercontent.com/78657808/178759087-3452e92a-a4fe-4775-8bcb-9021d75edb17.jpg)
 
 # Features to be implemented:
-!Filter search
-!Contact Form
-!Staff Directory
+![Filter search]
+![Contact Form]
+![Staff Directory]
 
 
 
