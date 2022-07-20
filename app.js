@@ -41,6 +41,7 @@ mongoose.connect(dbURI).then((result)=>{
 }).catch((err)=>{
     console.log(err);
 })
+
 //use static contents in Client folder
 app.use(express.static(__dirname + '/Client'));
 app.use(express.static(__dirname + '/Client/Assets'));
@@ -51,6 +52,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//use cors to share resources on different platforms
 app.use(cors({
     origin:"http://localhost:3001",
     credentials: true
@@ -68,12 +70,20 @@ app.use(passport.session());
 require('./passportConfig')(passport);
 
 
-
-
-
 //direct to the folder to use ejs
 app.set('views',__dirname+'/Server/Views/contents');
 app.set('view engine', 'ejs');
+
+
+
+//Using route middlewares
+app.use(apartmentRoutes);
+app.use(announcementRoutes);
+app.use(amenityBookingRoutes)
+app.use(maintenanceRequestRoutes);
+app.use(workOrderRoutes);
+app.use(parkingRoutes);
+app.use(loginRoutes);;
 
 
 //home page data
@@ -83,17 +93,15 @@ app.get('/',isAuth,(req,res)=>{
     let name = req.user.firstname;
     let username = req.user.username
         Announcement.find().sort({date:-1}).then((announcement)=>{           
-            Booking.find({user:username}).sort({_id:-1}).then((booking)=>{ 
-               
-                
+            Booking.find({user:username}).sort({_id:-1}).then((booking)=>{             
                 res.render('index',{title:'Home' ,announcement: announcement, amenity:booking , page:'home',usertype:usertype,name:name});
-            })
-            
+            })         
         }).catch((err)=>{
             console.log(err.msg);
         }) 
 });
 
+//Contact Form
 app.get('/contact-us',isAuth,(req,res)=>{
     let usertype = req.user.userType;
     res.render('contactus', {title:'Contact Us', page:'contact us',usertype:usertype})
@@ -104,16 +112,7 @@ app.post('/contact-us',isAuth,(req,res)=>{
 })
 
 
-
-//Using Routers folder
-app.use(apartmentRoutes);
-app.use(announcementRoutes);
-app.use(amenityBookingRoutes)
-app.use(maintenanceRequestRoutes);
-app.use(workOrderRoutes);
-app.use(parkingRoutes);
-app.use(loginRoutes);;
-
+//404 Error Page
 app.use((req,res)=>{
     res.status(404).send('<h1>404 - Page not found</h1>')
 })

@@ -1,5 +1,6 @@
 const Announcement = require('../Models/announcement');
 
+//Display all announcements
 const announcementDisplay = (req,res)=>{
     let usertype = req.user.userType;
     Announcement.find().sort({date:-1}).then((result)=>{
@@ -9,11 +10,14 @@ const announcementDisplay = (req,res)=>{
     })
 }
 
+//Display new announcement form
 const announcementAddForm = (req,res)=>{
     let usertype = req.user.userType;
     res.render('announcement-add',{title:'New Announcement', page:'add', announcement:'',usertype:usertype});
 }
 
+
+//Create new announcement in Db
 const announcementAddProcess = (req,res)=>{
     
     const newAnnouncement = {
@@ -33,6 +37,8 @@ const announcementAddProcess = (req,res)=>{
     })
 };
 
+
+//Display edit form for selected announcement
 const announcementEditForm = (req,res)=>{
     let usertype = req.user.userType;
     const id = req.params.id
@@ -43,6 +49,7 @@ const announcementEditForm = (req,res)=>{
     }) 
 };
 
+//Update editted announcement
 const announcementEditProcess = (req,res)=>{
     const id = req.params.id
     let updatedAnnouncement = req.body
@@ -58,6 +65,8 @@ const announcementEditProcess = (req,res)=>{
     })
 };
 
+
+//Delete selected announcement
 const announcementDeleteProcess = (req,res)=>{
     const id = req.params.id
     Announcement.remove({_id:id},(err)=>{
@@ -67,6 +76,7 @@ const announcementDeleteProcess = (req,res)=>{
         res.redirect('/announcement');
     })
 };
+
 
 module.exports = {
     announcementDisplay,

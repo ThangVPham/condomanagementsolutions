@@ -1,29 +1,14 @@
 const MaintenanceRequest = require('../Models/maintenanceRequest');
 const WorkOrder = require('../Models/workOrder');
 const moment = require('moment');
+
+//Display maintenance request form
 const maintenanceRequestDisplay = (req,res)=>{
     let usertype = req.user.userType;
     res.render('maintenancerequest',{title:'Maintenance Request', page:'maintenanceReq',usertype:usertype})
 };
 
-const maintenanceRequestAdd = (req,res)=>{
-    const newRequest = req.body;
-    
-    const dateNow = new Date();
-
-    newRequest.dateCreated = dateNow;
-    
-    newRequest.status = 'Pending'
-    newRequest.user = req.user.username;
-    MaintenanceRequest.create(newRequest,(err)=>{
-        if(err){
-            console.log(err);
-            res.end(err);
-        }        
-        res.redirect('/myrequest');
-    })
-}
-
+//Display all maintenance requests for admin user. For other usertype display user's requests
 const myrequestDisplay = (req,res)=>{
     let usertype = req.user.userType;
     let username = req.user.username;
@@ -44,6 +29,26 @@ const myrequestDisplay = (req,res)=>{
 
 }
 
+//Display maintenance request form
+const maintenanceRequestAdd = (req,res)=>{
+    const newRequest = req.body;
+    
+    const dateNow = new Date();
+
+    newRequest.dateCreated = dateNow;
+    
+    newRequest.status = 'Pending'
+    newRequest.user = req.user.username;
+    MaintenanceRequest.create(newRequest,(err)=>{
+        if(err){
+            console.log(err);
+            res.end(err);
+        }        
+        res.redirect('/myrequest');
+    })
+}
+
+//Create maintenance request in Db
 const requestsHandlingProcess = (req,res)=>{
     let id = req.params.id;
     let status = req.body.status;
@@ -61,9 +66,7 @@ const requestsHandlingProcess = (req,res)=>{
             if(err){
                 console.log(err);
             }
-
-            
-            
+             
             newWorkOrder._id = id;
             newWorkOrder.requestType = request.requestType;
             newWorkOrder.priority = request.priority;
@@ -88,22 +91,6 @@ const requestsHandlingProcess = (req,res)=>{
             })          
         });               
     }
-    //Remove work ticket if request is decline
-    if(status=='Declined'){ 
-        WorkOrder.findOne({_id:id},(err,result)=>{
-            if(err){
-                console.log(err);
-            }
-            if(result != null){             
-                WorkOrder.remove({_id:id},(err)=>{
-                    if(err){
-                        console.log(err);
-                        res.end(err);
-                    }
-                })                  
-            }      
-        })       
-    }   
 }
 
 module.exports = {

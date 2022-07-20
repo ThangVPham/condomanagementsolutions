@@ -4,6 +4,7 @@ const passport = require('passport');
 const Announcement = require('../Models/announcement');
 const Booking = require('../Models/amenityBooking');
 
+//Display login page when user is not authenticated
 const displayLoginPage = (req,res)=>{
     if(req.isAuthenticated()){
         res.redirect('/')
@@ -11,6 +12,7 @@ const displayLoginPage = (req,res)=>{
     res.render('login',{title:'Login', page:'login', message:''})
 }
 
+//Validate user login information
 const processLoginPage =  (req,res,next)=>{
 
     passport.authenticate("local",(err,user,info)=>{
@@ -32,6 +34,7 @@ const processLoginPage =  (req,res,next)=>{
     })(req,res,next);
 }
 
+//Display registration form
 const displayRegisterPage = (req,res)=>{
     if(req.isAuthenticated()){
         res.redirect('/')
@@ -39,6 +42,7 @@ const displayRegisterPage = (req,res)=>{
     res.render('register',{title:'Register', page:'register'})
 }
 
+//Create new user in Db
 const processRegisterPage = (req,res) =>{
     User.findOne({email: req.body.email},(err,user)=>{
         if(err){
@@ -62,6 +66,7 @@ const processRegisterPage = (req,res) =>{
 
 }
 
+//Logout
 const processLogOut = (req,res)=>{
     req.logout();
     res.redirect('/login')

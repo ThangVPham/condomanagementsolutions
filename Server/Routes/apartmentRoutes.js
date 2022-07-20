@@ -9,7 +9,7 @@ router.get('/apartment', isAuth,apartmentController.apartmentDisplay)
 router.get('/new-unit', isAuth,apartmentController.apartmentAddForm);
 router.post('/apartment-add', isAuth,apartmentController.apartmentAddProcess)
 //View Individual Apartment
-router.get('/apartment/:id', isAuth,apartmentController.apartmentUnitDisplay)
+// router.get('/apartment/:id', isAuth,apartmentController.apartmentUnitDisplay)
 //Delete Apartment profile
 router.get('/apartment/delete/:id', isAuth,apartmentController.apartmentDeleteProcess)
 //Edit apartment

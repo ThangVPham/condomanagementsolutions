@@ -11,7 +11,7 @@
                     <div class="form-group col-md-6 mb-3 w-100">
                       <label for="primaryOccupant">Primary Occupant</label>
                       <div class="d-flex mb-3">
-                        <input class="form-control me-2" type="text"id="primaryOccupant" placeholder="Full Name" name="primaryOccupant" value="<%=apartment.primaryOccupant==null?'':apartment.primaryOccupant%>">
+                        <input class="form-control me-2" type="text" id="primaryOccupant" placeholder="Full Name" name="primaryOccupant" value="<%=apartment.primaryOccupant==null?'':apartment.primaryOccupant%>">
                       </div>
                       <label for="phone">Phone</label>
                       <div class="d-flex">
@@ -22,11 +22,14 @@
                       <div class="d-flex mb-3">
                           <div class="col-6 pe-2">
                               <label for="unitNumber">Unit Number</label>
-                              <input type="text" class="form-control me-2" id="unitNumber" placeholder="#" name="unitNumber" value="<%=apartment.unitNumber==null?'':apartment.unitNumber%>">
+                              <input type="text" class="form-control me-2" id="unitNumber" placeholder="#" name="unitNumber" value="<%=apartment.unitNumber==null?'':apartment.unitNumber%>
+                              ">
                           </div>
                           <div class="col-6  pe-1 ">
                               <label for="size">Unit Size</label>
-                              <input type="number" class="form-control me-2" id="size" placeholder="Sqrt ft" name="size" value="<%=apartment.size==null?'':apartment.size%>">
+                              <input type="number" class="form-control me-2" id="size" placeholder="Sqrt ft" name="size" value="
+                              <%=apartment.size==null?'':apartment.size%>
+                              ">
                           </div>                
                       </div>
                     </div>
@@ -39,11 +42,16 @@
                             <div class="col-6 pe-1">
                                 <label for="availability">Available</label>
                                 <select type="text" class="form-control" id="availability">
-                                    <%if(apartment.numOfBdr){%>
-                                        <option value="<%=apartment.numOfBdr%>" selected><%=apartment.numOfBdr%></option>
+                                    <%if(apartment.availability ==='Not Available'){%>
+                                        <option value="Not Available" selected>No</option>
+                                        <option value="Available" >Yes</option>
+                                    <%}else{%>
+                                        <option value="Available" selected>Yes</option>
+                                        <option value="Not Available" >No</option>
                                     <%}%>
-                                    <option value="Yes" selected>Yes</option>
-                                    <option value="No">No</option>
+                                    
+                                    
+                                    
                                 </select>
                             </div>
                         </div>                     

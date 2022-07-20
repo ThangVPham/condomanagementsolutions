@@ -1,11 +1,12 @@
 const Booking = require('../Models/amenityBooking');
+//Display amenity page
 const amenityDisplay = (req,res)=>{    
     let usertype = req.user.userType;
     res.render('amenity',{title:'Amenity', page:'amenities', usertype:usertype})
 }
 
 
-
+//Create new reservation booking
 const amenityBookingProcess = (req,res)=>{
     let newBooking = req.body;
     let usertype = req.user.userType;
@@ -33,16 +34,19 @@ const amenityBookingProcess = (req,res)=>{
 
 }
 
+//Display elevator message
 const movingPageDisplay = (req,res)=>{
     let usertype = req.user.userType;
     res.render('moving',{title:'Moving', page:'moving',usertype:usertype})
 }
 
+//Display elevator booking form
 const elevatorBookingFormDisplay = (req,res)=>{
     let usertype = req.user.userType;
     res.render('elevatorbooking',{title:'Elevator Booking', page:'elevatorbooking',usertype:usertype})
 }
 
+//Create elevator reservation
 const elevatorBookingProcess = (req,res) =>{
     let elevatorBooking = req.body;
     let usertype = req.user.userType;
@@ -57,6 +61,7 @@ const elevatorBookingProcess = (req,res) =>{
     })
 }
 
+//Display user's reservation
 const myreservationDisplay = (req,res)=>{
     let usertype = req.user.userType;
     let username = req.user.username;
@@ -68,6 +73,7 @@ const myreservationDisplay = (req,res)=>{
     })
 }
 
+//Delete user selected reservation
 const myreservationDelete = (req,res)=>{
     Booking.deleteOne({_id:req.params.id},(err)=>{
         if(err){
@@ -77,6 +83,7 @@ const myreservationDelete = (req,res)=>{
     })
     
 }
+
 module.exports = {
     amenityDisplay,
     amenityBookingProcess,

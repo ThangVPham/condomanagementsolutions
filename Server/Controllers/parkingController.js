@@ -1,9 +1,11 @@
 const Parking = require('../Models/parking');
 
+//Display visitor parking form
 const parkingFormDisplay = (req,res)=>{
     let usertype = req.user.userType;
     res.render('parking',{title:'Parking Permit', page:'parking',usertype:usertype})
 }
+
 const parkingFormProcess = (req,res)=>{
     let usertype = req.user.userType;
     let permit = req.body;
