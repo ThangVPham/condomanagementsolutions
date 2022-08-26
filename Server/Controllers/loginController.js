@@ -53,7 +53,7 @@ const processRegisterPage = (req,res) =>{
         }
         if(!user){
             let newUser = req.body
-        
+            
             User.create(newUser, async(err)=>{
                 if(err){
                     console.log(err)

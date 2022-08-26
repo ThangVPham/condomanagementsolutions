@@ -12,7 +12,10 @@ let userSchema = new Schema({
     firstname: String,
     lastname:String,
     apartment: String,
-    userType: String,
+    userType: {
+        type:String,
+        default: 'Resident'
+    },
     phone: String,
     emergencyContact: String,
     emergencyNumber: String,
