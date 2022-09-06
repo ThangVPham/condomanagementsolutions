@@ -26,7 +26,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const passportLocal = require('passport-local');
-const cors = require('cors')
+const cors = require('cors');
 
 
 //connect to MongoDb
@@ -87,7 +87,7 @@ app.use(loginRoutes);;
 
 
 //home page data
-const getAnnouncement = 
+
 app.get('/',isAuth,(req,res)=>{  
     let usertype = req.user.userType;
     let name = req.user.firstname;
