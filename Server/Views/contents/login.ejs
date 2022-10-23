@@ -33,16 +33,26 @@
           class="d-flex justify-content-center animate__animated animate__fadeInDown"
           style="align-items: center; height: 70vh"
         >
-          <div class="login-form" style="color: white; height: 45vh">
+          <div class="login-form" style="color: white">
             <h3 class="mb-3">Sign In</h3>
             <hr />
             <div
-              class="w-100 my-2 p-1"
-              style="background-color: rgba(39, 214, 39, 0.5)"
+              class="w-100 alert alert-dismissible fade show"
+              role="alert"
+              style="
+                background-color: rgba(39, 214, 39, 0.5);
+                border-radius: 3px;
+              "
             >
               Please use the following credentials for demo purposes.<br />
               Email: guest@cms.com<br />
               Password: guest
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
             </div>
             <form method="POST">
               <%if(message){%>
@@ -92,5 +102,10 @@
         </footer>
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
