@@ -261,6 +261,7 @@ body{
         linear-gradient(to bottom, rgba(12, 12, 12, 0.6), rgba(11, 12, 12, 0.6)),
         url(../Assets/bg-city2.jpg);
         background-size: cover;
+        background-position: 50% -20%;
 }
 .register-body{
     height:100%;
@@ -268,6 +269,7 @@ body{
         linear-gradient(to bottom, rgba(12, 12, 12, 0.6), rgba(11, 12, 12, 0.6)),
         url(../Assets/bg-city2.jpg);
         background-size: cover;
+        background-position: 50% -20%;
 }
 
 .login-form{
