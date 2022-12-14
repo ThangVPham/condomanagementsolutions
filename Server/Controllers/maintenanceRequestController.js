@@ -16,6 +16,8 @@ const maintenanceRequestDisplay = (req, res) => {
 const myrequestDisplay = (req, res) => {
   let usertype = req.user.userType;
   let username = req.user.username;
+  console.log(req.body);
+
   if (usertype === "Admin") {
     MaintenanceRequest.find()
       .sort({ dateCreated: -1 })

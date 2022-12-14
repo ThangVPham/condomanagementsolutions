@@ -8,7 +8,7 @@ const maintenanceRequestRoutes = require("./Server/Routes/maintenanceRequestRout
 const workOrderRoutes = require("./Server/Routes/workOrderRoutes");
 const parkingRoutes = require("./Server/Routes/parkingRoutes");
 const loginRoutes = require("./Server/Routes/loginRoutes");
-
+const searchRoutes = require("./Server/Routes/searchRoutes");
 const Announcement = require("./Server/Models/announcement");
 const Booking = require("./Server/Models/amenityBooking");
 //Require Authentication
@@ -16,7 +16,7 @@ const isAuth = require("./authentication").isAuth;
 //----Middlewares------
 const express = require("express");
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -85,7 +85,7 @@ app.use(maintenanceRequestRoutes);
 app.use(workOrderRoutes);
 app.use(parkingRoutes);
 app.use(loginRoutes);
-
+app.use(searchRoutes);
 //home page data
 
 app.get("/", isAuth, (req, res) => {
